@@ -1,0 +1,129 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-width: 17rem;
+	padding: var(--gap-padding) var(--gap-body-row);
+	height: 4rem;
+	background: var(--primary-dark);
+	color: var(--secondary-light);
+	font-size: var(--medium-text-size);
+	box-shadow: 0.05rem 0.05rem 1rem var(--secondary-dark);
+	position: relative;
+	z-index: 50;
+}
+
+.header__logo {
+	display: flex;
+	height: 100%;
+}
+
+.header__logo img {
+	height: 100%;
+}
+
+.header__navigation {
+	display: flex;
+	gap: var(--gap-navigation);
+}
+
+.header__navigation a {
+	color: var(--secondary-light);
+}
+
+.header__mobile-button {
+	display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+	.header {
+		padding: 0.7rem var(--gap-navigation);
+		height: 3.5rem;
+		font-size: var(--small-text-size);
+	}
+}	
+
+@media screen and (max-width: 600px) {
+
+	.header {
+		padding: 0.7rem 0.5rem;
+		height: 3.3rem;
+		box-shadow: 0.02rem 0.02rem 0.5rem var(--secondary-dark);
+	}
+
+	.header__navigation {
+		display: none;
+	}
+
+	.header__mobile-button {
+		display: flex;
+		position: relative;
+		height: 70%;
+		width: 2.5rem;
+		cursor: pointer;
+	}
+
+	.header__mobile-button div {
+		height: 0.1rem;
+		width: 2.5rem;
+		background-color: var(--primary-light);
+		position: absolute;
+		right: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: 0.25s ease-in-out;
+		-moz-transition: 0.25s ease-in-out;
+		-o-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+	}
+	
+	.header__mobile-button div:nth-child(1) {
+		top: 10%;
+		width: 75%;
+		transform: translateY(-50%);	
+	}
+	
+	.header__mobile-button div:nth-child(2), 
+	.header__mobile-button div:nth-child(3) {
+		top: 55%;
+		width: 100%;
+		transform: translateY(-50%);
+	}
+	
+	.header__mobile-button div:nth-child(4) {
+		top: 100%;
+		width: 75%;
+		transform: translateY(-50%);
+	}
+	
+	.header__mobile-button--opened div {
+		background: var(--secondary-light);
+	}
+	
+	.header__mobile-button--opened div:nth-child(1) {
+		opacity: 0;
+	}
+	
+	.header__mobile-button--opened div:nth-child(2) {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	
+	.header__mobile-button--opened div:nth-child(3) {
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+	
+	.header__mobile-button--opened div:nth-child(4) {
+		opacity: 0;
+	}
+}

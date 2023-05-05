@@ -1,0 +1,82 @@
+.filter-buttons {
+	padding: 0.5rem var(--gap-body-row) 0 var(--gap-body-row);
+	background: var(--primary-light);
+	color: var(--primary-dark);
+	font-weight: bold;
+	white-space: nowrap;
+	position: sticky;
+	top: 0;
+	min-width: 17rem;
+	z-index: 30;
+	/*box-shadow: 0.05rem 0.05rem 1rem var(--secondary-dark);*/
+}
+
+.filter-buttons__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-bottom: 0.09rem solid var(--primary-dark);
+	gap: var(--gap-navigation-mobile);
+	overflow: scroll;
+	padding-bottom: 0.2rem;
+}
+
+.filter-buttons__allhomes,
+.filter-buttons__beachfront,
+.filter-buttons__amazing-views,
+.filter-buttons__luxe,
+.filter-buttons__amazing-pools,
+.filter-buttons__cabins,
+.filter-buttons__treehouses,
+.filter-buttons__private-room {
+	position: relative;
+	margin-bottom: -0.2rem;
+	opacity: 0.65;
+}
+
+.filter-buttons__allhomes:hover,
+.filter-buttons__beachfront:hover,
+.filter-buttons__amazing-views:hover,
+.filter-buttons__luxe:hover,
+.filter-buttons__amazing-pools:hover,
+.filter-buttons__cabins:hover,
+.filter-buttons__treehouses:hover,
+.filter-buttons__private-room:hover {
+	opacity: 1;
+}
+
+.filter-buttons--active {
+	border-bottom: 0.2rem solid var(--primary-dark);
+	opacity: 1;
+}
+
+.filter-buttons__container--animated {
+	box-shadow: 0 0.0005rem 1rem var(--secondary-dark);
+	transition: all 0.8s ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+
+	.filter-buttons {
+		padding: 0.5rem var(--gap-navigation) 0 var(--gap-navigation);
+	}
+
+	.filter-buttons__container {
+		border-bottom: 0.09rem solid var(--primary-dark);
+		gap: var(--gap-filter-buttons-mobile);
+		justify-content: left;
+	}
+}	
+
+@media screen and (max-width: 600px) {
+
+	.filter-buttons {
+		padding: 0.2rem 0.5rem 0.7rem 0.5rem;
+		min-width: 17rem;
+	}
+
+	.filter-buttons__container button img {
+		width: 1.8rem;
+	}
+}

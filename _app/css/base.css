@@ -1,6 +1,19 @@
-body {}
+body {
+	font-family: var(--primary-font-family);
+	margin: 0 auto;
+	font-weight: 400;
+	font-style: normal;
+	-webkit-font-smooting: anititial;
+	animation: fade 0.3s ease-in-out;
+}
 
-main {}
+main {
+	margin: var(--gap-navigation) var(--gap-body-row) var(--gap-padding) var(--gap-body-row);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 5%;
+}
 
 @media screen and (min-width: 1920px) {
 	

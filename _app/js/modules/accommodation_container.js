@@ -1,62 +1,62 @@
 export default function createAccommodationContainerDOM(accommodations, container) {	
 	accommodations.forEach(element => {
-		const homeListItem = document.createElement('a');
-		const homeListContainer = document.createElement('div');
-		const homeListItemImage = document.createElement('img');
-		const homeListItemButtonArrowLeft = document.createElement('button');
-		const homeListItemIconArrowLeft = document.createElement('img');
-		const homeListItemButtonArrowRight = document.createElement('button');
-		const homeListItemIconArrowRight = document.createElement('img');
-		const homeListItemButtonHeart = document.createElement('button');
-		const homeListItemIconHeart = document.createElement('img');
-		const homeListItemCounty = document.createElement('h3');
-		const homeListItemBeds = document.createElement('h5');
-		const homeListItemSpan = document.createElement('span');
-		const homeListItemPrice = document.createElement('h4');
-		const homeListItemText = document.createElement('h5');
+		const accommodationListItem = document.createElement('a');
+		const accommodationListContainer = document.createElement('div');
+		const accommodationListItemImage = document.createElement('img');
+		const accommodationListItemButtonArrowLeft = document.createElement('button');
+		const accommodationListItemIconArrowLeft = document.createElement('img');
+		const accommodationListItemButtonArrowRight = document.createElement('button');
+		const accommodationListItemIconArrowRight = document.createElement('img');
+		const accommodationListItemButtonHeart = document.createElement('button');
+		const accommodationListItemIconHeart = document.createElement('img');
+		const accommodationListItemCounty = document.createElement('h3');
+		const accommodationListItemBeds = document.createElement('h5');
+		const accommodationListItemSpan = document.createElement('span');
+		const accommodationListItemPrice = document.createElement('h4');
+		const accommodationListItemText = document.createElement('h5');
 	
-		homeListItemImage.setAttribute('alt', 'Image of a house');
-		homeListItemIconArrowLeft.setAttribute('alt', 'Arrow left icon');
-		homeListItemIconArrowRight.setAttribute('alt', 'Arrow right icon');
-		homeListItemIconHeart.setAttribute('alt', 'Heart white icon');
-		homeListItemCounty.setAttribute('lang', 'no');
+		accommodationListItemImage.setAttribute('alt', 'Image of a house');
+		accommodationListItemIconArrowLeft.setAttribute('alt', 'Arrow left icon');
+		accommodationListItemIconArrowRight.setAttribute('alt', 'Arrow right icon');
+		accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
+		accommodationListItemCounty.setAttribute('lang', 'no');
 
-		homeListItem.className = 'frontpage_homes__home';
-		homeListItemImage.className = 'frontpage_homes__home-image';
-		homeListItemButtonArrowLeft.className = 'frontpage_homes__home-arrow-left';
-		homeListItemButtonArrowRight.className = 'frontpage_homes__home-arrow-right';
-		homeListItemButtonHeart.className = 'frontpage_homes__home-heart';
+		accommodationListItem.className = 'frontpage_homes__home';
+		accommodationListItemImage.className = 'frontpage_homes__home-image';
+		accommodationListItemButtonArrowLeft.className = 'frontpage_homes__home-arrow-left';
+		accommodationListItemButtonArrowRight.className = 'frontpage_homes__home-arrow-right';
+		accommodationListItemButtonHeart.className = 'frontpage_homes__home-heart';
 		
-		homeListItem.href = '/';
-		homeListItemImage.src = `${element.image}`;
-		homeListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
-		homeListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
-		homeListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
-		homeListItemCounty.innerHTML = `${element.city}, ${element.county}`;
-		homeListItemBeds.innerText = `${element.beds} beds`;
-		homeListItemPrice.innerText = `${element.price} kr NOK`;
-		homeListItemText.innerText = 'night';
+		accommodationListItem.href = '/';
+		accommodationListItemImage.src = `${element.image}`;
+		accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
+		accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
+		accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
+		accommodationListItemCounty.innerHTML = `${element.city}, ${element.county}`;
+		accommodationListItemBeds.innerText = `${element.beds} beds`;
+		accommodationListItemPrice.innerText = `${element.price} kr NOK`;
+		accommodationListItemText.innerText = 'night';
 
-		homeListItem.append(
-			homeListContainer,
-			homeListItemCounty,
-			homeListItemBeds,
-			homeListItemSpan
+		accommodationListItem.append(
+			accommodationListContainer,
+			accommodationListItemCounty,
+			accommodationListItemBeds,
+			accommodationListItemSpan
 		);
-		homeListContainer.append(
-			homeListItemImage,
-			homeListItemButtonArrowLeft,
-			homeListItemButtonArrowRight,
-			homeListItemButtonHeart
+		accommodationListContainer.append(
+			accommodationListItemImage,
+			accommodationListItemButtonArrowLeft,
+			accommodationListItemButtonArrowRight,
+			accommodationListItemButtonHeart
 		);
-		homeListItemButtonArrowLeft.appendChild(homeListItemIconArrowLeft);
-		homeListItemButtonArrowRight.appendChild(homeListItemIconArrowRight);
-		homeListItemButtonHeart.appendChild(homeListItemIconHeart);
-		homeListItemSpan.append(
-			homeListItemPrice,
-			homeListItemText
+		accommodationListItemButtonArrowLeft.appendChild(accommodationListItemIconArrowLeft);
+		accommodationListItemButtonArrowRight.appendChild(accommodationListItemIconArrowRight);
+		accommodationListItemButtonHeart.appendChild(accommodationListItemIconHeart);
+		accommodationListItemSpan.append(
+			accommodationListItemPrice,
+			accommodationListItemText
 		);
-		container.appendChild(homeListItem)
+		container.appendChild(accommodationListItem)
 	});	
 		
 	return container;

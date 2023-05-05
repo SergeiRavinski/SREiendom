@@ -5,6 +5,7 @@ import FrontpageAccommodations from "./modules/frontpage_accommodations.js"
 import Search from "./modules/search.js"
 import AsideCollapsibleButtons from "./modules/aside_collapsible_buttons.js"
 import ScrollUp from "./modules/scroll_up.js"
+import ScrollIntoSection from "./modules/scroll_into_section.js"
 
 Header();
 AnimationOnScroll();
@@ -13,3 +14,4 @@ FrontpageAccommodations();
 Search();
 AsideCollapsibleButtons();
 ScrollUp();
+ScrollIntoSection();

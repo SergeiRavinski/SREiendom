@@ -1,2 +1,40 @@
-:root {}
- 
+:root {
+	--large-text-size: 2.5rem;
+	--medium-text-size: 1.6rem;
+	--small-text-size: 1.2rem;
+	--extra-small-text-size: 0.8rem;
+
+	--mobile-large-text-size: 1rem;
+	--mobile-medium-text-size: 0.8rem;
+	--mobile-small-text-size: 0.65rem;
+	--mobile-extra-small-text-size: 0.5rem;
+
+	--primary-dark: #19647E;
+	--secondary-dark: #2B4141;
+	--tertiary-dark: #6C757D;
+	--primary-light: #FFFFFF;
+	--secondary-light: #F0F5F8;
+	--tertiary-light: #dfe7ec;
+	--quaternary-light: #c8d7e0;
+
+	--primary-dark-transparent: rgba(0, 5, 8, 0.4);
+	--secondary-dark-transparent: rgba(0, 5, 8, 0.6);
+	--primary-light-transparent: rgba(255, 255, 255, 0.8);
+
+	--gap-navigation: 3rem;
+	--gap-navigation-mobile: 1rem;
+	--gap-filter-buttons: 2rem;
+	--gap-filter-buttons-collapsible: 2rem;
+	--gap-filter-buttons-mobile: 1rem;
+	--gap-padding: 0.7rem;
+	--gap-body-row: 7rem;
+	--gap-frontpage-grid: 1rem;
+	--gap-button-scroll-up: 3rem;
+	--mobile-gap-button-scroll-up: 1rem;
+
+	--gap-frontpage-grid-mobile: 0.3rem;
+
+	--primary-font-family: 'Roboto', sans-serif;
+
+	--border-radius: 0.2rem;
+}

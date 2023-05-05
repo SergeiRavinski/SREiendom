@@ -8,7 +8,7 @@ import information from './structure/information.js';
 export default {
 	title: 'SREiendom',
 
-	projectId: 'fmo4x6ix',
+	projectId: 'giynpudv',
 	dataset: 'production',
 
 	plugins: [

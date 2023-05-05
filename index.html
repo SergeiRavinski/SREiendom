@@ -80,8 +80,218 @@
 
 		</section>
 
+		<main>
 
-		<main></main>
+			<aside class="filtering">
+
+				<form class="filtering__search-bar">
+					<input 
+						type="text" 
+						placeholder="search"
+						class="filtering__search-bar-input">
+					<input 
+						type="submit"
+						class="filtering__search-bar-submit">	
+				</form>
+
+				<!---------------------------------->
+
+				<section class="filtering__collapsible">
+
+					<button class="filtering__collapsible-button">
+						<h3>PROPERTY TYPE</h3>
+						<img src="/_app/assets/icons/arrow_down.svg" alt="Arrow down icon">
+					</button>
+
+					<fieldset class="filtering__collapsible-options">
+						<div class="filtering__property-type-options">
+							<div>
+								<input type="checkbox" id="house" name="house">
+								<label for="house">House</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="flat" name="flat">
+								<label for="flat">Flat</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="guest house" name="guest house">
+								<label for="guest house">Guest house</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="hotel" name="hotel">
+								<label for="hotel">Hotel</label>
+							</div>
+						</div>
+					</fieldset>
+
+				</section>	
+				
+				<!---------------------------------->
+
+				<section class="filtering__collapsible">
+
+					<button class="filtering__collapsible-button">
+						<h3>COUNTY</h3>
+						<img src="/_app/assets/icons/arrow_down.svg" alt="Arrow down icon">
+					</button>
+					
+					<fieldset class="filtering__collapsible-options">
+						<div class="filtering__county-options">
+							<div>
+								<input type="checkbox" id="oslo" name="oslo">
+								<label for="oslo">Oslo</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="rogaland" name="rogaland">
+								<label for="rogaland">Rogaland</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="møre og romsdal" name="møre og romsdal">
+								<label for="møre og romsdal">Møre og Romsdal</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="nordland" name="nordland">
+								<label for="nordland">Nordland</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="viken" name="viken">
+								<label for="viken">Viken</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="innlandet" name="innlandet">
+								<label for="innlandet">Innlandet</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="vestfold og telemark" name="vestfold og telemark">
+								<label for="vestfold og telemark">Vestfold og Telemark</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="agder" name="agder">
+								<label for="agder">Agder</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="vestland" name="vestland">
+								<label for="vestland" lang="no">Vestland</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="trøndelag" name="trøndelag">
+								<label for="trøndelag" lang="no">Trøndelag</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="troms og finnmark" name="troms og finnmark">
+								<label for="troms og finnmark" lang="no">Troms og Finnmark</label>
+							</div>
+						</div>
+					</fieldset>
+
+				</section>	
+
+				<!---------------------------------->
+
+				<section class="filtering__collapsible">
+
+					<button class="filtering__collapsible-button">
+						<h3>BEDS</h3>
+						<img src="/_app/assets/icons/arrow_down.svg" alt="Arrow down icon">
+					</button>
+
+					<fieldset class="filtering__collapsible-options">
+						<div class="filtering__beds-options">
+							<div>
+								<input type="checkbox" id="1" name="1">
+								<label for="1">1</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="2" name="2">
+								<label for="2">2</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="3" name="3">
+								<label for="3">3</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="4" name="4">
+								<label for="4">4</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="5" name="5">
+								<label for="5">5</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="6" name="6">
+								<label for="6">6</label>
+							</div>
+
+							<div>
+								<input type="checkbox" id="7" name="7">
+								<label for="7">7</label>
+							</div>
+						</div>
+					</fieldset>
+
+				</section>	
+
+				<!---------------------------------->
+
+				<h3 class="filtering__price-range-title">PRICE RANGE</h3>
+				<form class="filtering__price-range">
+					<input 
+						type="number" 
+						placeholder="min price"
+						class="filtering__price-range-min-price">
+					<input 
+						type="number" 
+						placeholder="max price"
+						class="filtering__price-range-max-price">
+					<input 
+						type="submit"
+						value="SEARCH"
+						class="filtering__price-range-search">	
+				</form>
+
+				<!---------------------------------->
+
+				<section class="filtering__map">
+					<h3>MAP</h3>
+					<button class="filtering__mapbox">
+						<img src="/_app/assets/Search.png" alt="Map">
+					</button>
+				</section>
+
+			</aside>
+				
+			<section class="search-result">
+				<div class="search-result__header">
+					<h2></h2>
+					<button></button>
+				</div>
+				<div class="search-result__container"></div>
+			</section>
+
+
+
+
+			
+		</main>
+
 		<footer></footer>
 
 	</body>

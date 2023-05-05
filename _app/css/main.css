@@ -3,4 +3,4 @@
 @import './fonts.css';
 @import './base.css';
 
-@import './modules/header.css';
+@import '/_app/css/modules/header.css';

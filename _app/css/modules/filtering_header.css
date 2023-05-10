@@ -22,7 +22,7 @@
 	padding-bottom: 0.2rem;
 }
 
-.filter-buttons__allhomes,
+.filter-buttons__allAccommodations,
 .filter-buttons__beachfront,
 .filter-buttons__amazing-views,
 .filter-buttons__luxe,
@@ -35,7 +35,7 @@
 	opacity: 0.65;
 }
 
-.filter-buttons__allhomes:hover,
+.filter-buttons__allAccommodations:hover,
 .filter-buttons__beachfront:hover,
 .filter-buttons__amazing-views:hover,
 .filter-buttons__luxe:hover,

@@ -1,4 +1,4 @@
-import { sanity } from "../sanity.js";
+import { sanity } from '../sanity.js';
 
 export default async function Search() {
 	let accommodationSearchText = '';

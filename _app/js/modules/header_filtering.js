@@ -1,4 +1,4 @@
-import { sanity } from "../sanity.js";
+import { sanity } from '../sanity.js';
 //import createAccommodationContainerDOM from "./accommodation_container.js";
 
 export default async function HeaderFiltering() {

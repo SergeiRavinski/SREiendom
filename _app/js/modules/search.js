@@ -10,7 +10,7 @@ export default async function Search() {
 	const foundAccommodationListResultTitle = document.querySelector('.search-result h2');
 	const sectionFronpageAccommodations = document.querySelector('.search-result__container');
 	const searchCloseButton = document.querySelector('.search-result__header button');
-	const frontpageAccommodations = document.querySelector('.frontpage_homes');
+	const frontpageAccommodations = document.querySelector('.frontpage_accommodations');
 	
 	searchListInput.addEventListener('submit', handleSearchInput);
 	searchCloseButton.addEventListener('click', handleCloseButton);
@@ -47,7 +47,7 @@ export default async function Search() {
 	 
 	function inputRenderHTML() {
 		foundAccommodationListResult.classList.add('search-result--visible');
-		frontpageAccommodations.classList.add('frontpage_homes--invisible');
+		frontpageAccommodations.classList.add('frontpage_accommodations--invisible');
 		searchInput.value = '';
 	}
 
@@ -77,11 +77,11 @@ export default async function Search() {
 				accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
 				accommodationListItemCounty.setAttribute('lang', 'no');
 	
-				accommodationListItem.className = 'frontpage_homes__home';
-				accommodationListItemImage.className = 'frontpage_homes__home-image';
-				accommodationListItemButtonArrowLeft.className = 'frontpage_homes__home-arrow-left';
-				accommodationListItemButtonArrowRight.className = 'frontpage_homes__home-arrow-right';
-				accommodationListItemButtonHeart.className = 'frontpage_homes__home-heart';
+				accommodationListItem.className = 'frontpage_accommodations__accommodation';
+				accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+				accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
+				accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
+				accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
 				
 				accommodationListItem.href = '/';
 				accommodationListItemImage.src = `${element.image}`;
@@ -124,7 +124,7 @@ export default async function Search() {
 
 	function closeButtonRenderHTML() {
 		foundAccommodationListResult.classList.remove('search-result--visible');
-		frontpageAccommodations.classList.remove('frontpage_homes--invisible');
+		frontpageAccommodations.classList.remove('frontpage_accommodations--invisible');
 	}	
 
 	function renderHTML() {

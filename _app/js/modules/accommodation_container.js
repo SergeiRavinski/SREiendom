@@ -21,11 +21,11 @@ export default function createAccommodationContainerDOM(accommodations, containe
 		accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
 		accommodationListItemCounty.setAttribute('lang', 'no');
 
-		accommodationListItem.className = 'frontpage_homes__home';
-		accommodationListItemImage.className = 'frontpage_homes__home-image';
-		accommodationListItemButtonArrowLeft.className = 'frontpage_homes__home-arrow-left';
-		accommodationListItemButtonArrowRight.className = 'frontpage_homes__home-arrow-right';
-		accommodationListItemButtonHeart.className = 'frontpage_homes__home-heart';
+		accommodationListItem.className = 'frontpage_accommodations__accommodation';
+		accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+		accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
+		accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
+		accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
 		
 		accommodationListItem.href = '/';
 		accommodationListItemImage.src = `${element.image}`;

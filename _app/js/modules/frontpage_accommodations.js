@@ -11,7 +11,7 @@ export default async function FrontpageAccommodations() {
 		price
 	}`;
 	const accommodations = await sanity.fetch(query);
-	const sectionFronpageAccommodations = document.querySelector('.frontpage_homes');
+	const sectionFronpageAccommodations = document.querySelector('.frontpage_accommodations');
 
 	createAccommodationContainerDOM(accommodations, sectionFronpageAccommodations);
 

@@ -32,7 +32,7 @@ export default function createAccommodationContainerDOM(accommodations, containe
 		accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
 		accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
 		accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
-		accommodationListItemCounty.innerHTML = `${element.city}, ${element.county}`;
+		accommodationListItemCounty.innerHTML = `${element.city}, ${element.county.charAt(0).toUpperCase() + element.county.slice(1)}`;
 		accommodationListItemBeds.innerText = `${element.beds} beds`;
 		accommodationListItemPrice.innerText = `${element.price} kr NOK`;
 		accommodationListItemText.innerText = 'night';

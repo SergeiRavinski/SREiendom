@@ -1,5 +1,7 @@
 import { sanity } from '../sanity.js';
 import createMapboxContainerDOM from './createMapboxContainer.js';
+import FrontpageAccommodations from './frontpage_accommodations.js';
+import createAccommodationContainerDOM from "./accommodation_container.js";
 
 export default async function Search() {
 	let accommodationSearchText = '';
@@ -27,6 +29,7 @@ export default async function Search() {
 
 	function handleCloseButton() {
 		closeButtonRenderHTML();
+		FrontpageAccommodations();
 	}
 
 	async function fetchAccommodations() {
@@ -35,7 +38,10 @@ export default async function Search() {
 			"county": county->name,
 			city,
 			beds,
-			price
+			price,
+			"longitude": location{longitude},
+			"latitude": location{latitude},
+			title
 		}`;
 
 		const params = {
@@ -53,77 +59,6 @@ export default async function Search() {
 		searchInput.value = '';
 	}
 
-	function createFoundAccommodationListContainerDOM() {
-		if (foundAccommodation.length > 0) {
-			foundAccommodationListResultTitle.innerText = `Search results for: ${accommodationSearchText}`; 
-
-			foundAccommodation.forEach(element => {
-				const accommodationListItem = document.createElement('a');
-				const accommodationListContainer = document.createElement('div');
-				const accommodationListItemImage = document.createElement('img');
-				const accommodationListItemButtonArrowLeft = document.createElement('button');
-				const accommodationListItemIconArrowLeft = document.createElement('img');
-				const accommodationListItemButtonArrowRight = document.createElement('button');
-				const accommodationListItemIconArrowRight = document.createElement('img');
-				const accommodationListItemButtonHeart = document.createElement('button');
-				const accommodationListItemIconHeart = document.createElement('img');
-				const accommodationListItemCounty = document.createElement('h3');
-				const accommodationListItemBeds = document.createElement('h5');
-				const accommodationListItemSpan = document.createElement('span');
-				const accommodationListItemPrice = document.createElement('h4');
-				const accommodationListItemText = document.createElement('h5');
-			
-				accommodationListItemImage.setAttribute('alt', 'Image of a house');
-				accommodationListItemIconArrowLeft.setAttribute('alt', 'Arrow left icon');
-				accommodationListItemIconArrowRight.setAttribute('alt', 'Arrow right icon');
-				accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
-				accommodationListItemCounty.setAttribute('lang', 'no');
-	
-				accommodationListItem.className = 'frontpage_accommodations__accommodation';
-				accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
-				accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
-				accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
-				accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
-				
-				accommodationListItem.href = '/';
-				accommodationListItemImage.src = `${element.image}`;
-				accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
-				accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
-				accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
-				accommodationListItemCounty.innerHTML = `${element.city}, ${element.county.charAt(0).toUpperCase() + element.county.slice(1)}`;
-				accommodationListItemBeds.innerText = `${element.beds} beds`;
-				accommodationListItemPrice.innerText = `${element.price} kr NOK`;
-				accommodationListItemText.innerText = 'night';
-	
-				accommodationListItem.append(
-					accommodationListContainer,
-					accommodationListItemCounty,
-					accommodationListItemBeds,
-					accommodationListItemSpan
-				);
-				accommodationListContainer.append(
-					accommodationListItemImage,
-					accommodationListItemButtonArrowLeft,
-					accommodationListItemButtonArrowRight,
-					accommodationListItemButtonHeart
-				);
-				accommodationListItemButtonArrowLeft.appendChild(accommodationListItemIconArrowLeft);
-				accommodationListItemButtonArrowRight.appendChild(accommodationListItemIconArrowRight);
-				accommodationListItemButtonHeart.appendChild(accommodationListItemIconHeart);
-				accommodationListItemSpan.append(
-					accommodationListItemPrice,
-					accommodationListItemText
-				);
-				sectionFronpageAccommodations.appendChild(accommodationListItem);
-			});
-
-		} else {
-			foundAccommodationListResultTitle.innerText = `Sorry, but nothing matched your search terms. Please try again with some different keywords.`; 
-		}
-		
-		return sectionFronpageAccommodations;
-	}
-
 	function closeButtonRenderHTML() {
 		foundAccommodationListResult.classList.remove('search-result--visible');
 		frontpageAccommodations.classList.remove('frontpage_accommodations--invisible');
@@ -131,7 +66,17 @@ export default async function Search() {
 
 	function renderHTML() {
 		sectionFronpageAccommodations.innerHTML = '';
-		createFoundAccommodationListContainerDOM();
+
+		if (foundAccommodation.length > 0) {
+			foundAccommodationListResultTitle.innerText = `Search results for: ${accommodationSearchText}`; 
+
+			foundAccommodation.forEach(element => {
+				let accomodationTemplate = createAccommodationContainerDOM(element);
+				sectionFronpageAccommodations.appendChild(accomodationTemplate);
+			});
+		} else {
+			foundAccommodationListResultTitle.innerText = `Sorry, but nothing matched your search terms. Please try again with some different keywords.`; 
+		}	
 	}
 
 	renderHTML();

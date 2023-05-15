@@ -1,5 +1,6 @@
 import { sanity } from '../sanity.js';
 import createAccommodationContainerDOM from "./accommodation_container.js";
+import createMapboxContainer from "./createMapboxContainer.js";
 
 export default async function FrontpageAccommodations() {
 
@@ -19,5 +20,5 @@ export default async function FrontpageAccommodations() {
 	//	createAccommodationContainerDOM();
 	//}
 
-	//renderHTML();
+	createMapboxContainer(accommodations);
 }

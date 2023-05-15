@@ -1,4 +1,5 @@
 import { sanity } from '../sanity.js';
+import createAccommodationContainerDOM from "./accommodation_container.js";
 import createMapboxContainerDOM from "./createMapboxContainer.js";
 
 export default async function HeaderFiltering() {
@@ -7,6 +8,9 @@ export default async function HeaderFiltering() {
 
 	const sectionFronpageAccommodations = document.querySelector('.frontpage_accommodations');
 	const filterButtons = document.querySelectorAll('.filter-buttons__container button');
+	const checkboxes = document.querySelectorAll('.filtering__checkbox');
+	const asideOptions = document.querySelectorAll('.filtering__collapsible-options > div');
+	const asideCollapsibleButtonArrow = document.querySelectorAll('.filtering__collapsible-button img');
 	
 	for (const button of filterButtons) {
 		button.addEventListener('click', handleFilterButtonClick);
@@ -40,7 +44,10 @@ export default async function HeaderFiltering() {
 			city,
 			beds,
 			price,
-			category
+			category,
+			"longitude": location{longitude},
+			"latitude": location{latitude},
+			title
 		}`;
 
 		const params = {	
@@ -50,78 +57,20 @@ export default async function HeaderFiltering() {
 		accommodations = await sanity.fetch(query, params);
 	}
 
-	//createAccommodationContainerDOM(accommodations, sectionFronpageAccommodations);
-	
-	function createAccommodationListContainerDOM() {	
-		accommodations.filter(element => {
-			const accommodationListItem = document.createElement('a');
-			const accommodationListContainer = document.createElement('div');
-			const accommodationListItemImage = document.createElement('img');
-			const accommodationListItemButtonArrowLeft = document.createElement('button');
-			const accommodationListItemIconArrowLeft = document.createElement('img');
-			const accommodationListItemButtonArrowRight = document.createElement('button');
-			const accommodationListItemIconArrowRight = document.createElement('img');
-			const accommodationListItemButtonHeart = document.createElement('button');
-			const accommodationListItemIconHeart = document.createElement('img');
-			const accommodationListItemCounty = document.createElement('h3');
-			const accommodationListItemBeds = document.createElement('h5');
-			const accommodationListItemSpan = document.createElement('span');
-			const accommodationListItemPrice = document.createElement('h4');
-			const accommodationListItemText = document.createElement('h5');
-		
-			accommodationListItemImage.setAttribute('alt', 'Image of a house');
-			accommodationListItemIconArrowLeft.setAttribute('alt', 'Arrow left icon');
-			accommodationListItemIconArrowRight.setAttribute('alt', 'Arrow right icon');
-			accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
-			accommodationListItemCounty.setAttribute('lang', 'no');
-
-			accommodationListItem.className = 'frontpage_accommodations__accommodation';
-			accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
-			accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
-			accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
-			accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
-			
-			accommodationListItem.href = '/';
-			accommodationListItemImage.src = `${element.image}`;
-			accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
-			accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
-			accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
-			accommodationListItemCounty.innerHTML = `${element.city}, ${element.county}`;
-			accommodationListItemBeds.innerText = `${element.beds} beds`;
-			accommodationListItemPrice.innerText = `${element.price} kr NOK`;
-			accommodationListItemText.innerText = 'night';
-
-			accommodationListItem.append(
-				accommodationListContainer,
-				accommodationListItemCounty,
-				accommodationListItemBeds,
-				accommodationListItemSpan
-			);
-
-			accommodationListContainer.append(
-				accommodationListItemImage,
-				accommodationListItemButtonArrowLeft,
-				accommodationListItemButtonArrowRight,
-				accommodationListItemButtonHeart
-			);
-
-			accommodationListItemButtonArrowLeft.appendChild(accommodationListItemIconArrowLeft);
-			accommodationListItemButtonArrowRight.appendChild(accommodationListItemIconArrowRight);
-			accommodationListItemButtonHeart.appendChild(accommodationListItemIconHeart);
-			accommodationListItemSpan.append(
-				accommodationListItemPrice,
-				accommodationListItemText
-			);
-
-			sectionFronpageAccommodations.appendChild(accommodationListItem);
-		});	
-
-		return sectionFronpageAccommodations;
-	}
-
 	function renderHTML(currentActiveButton) {
-		if (currentActiveButton) {
+		for (const checkbox of checkboxes) {
+			checkbox.checked = false;
+		}
 
+		for (const asideOption of asideOptions) {
+			asideOption.style.display = 'none';
+		}
+
+		for (const collapsibleArrow of asideCollapsibleButtonArrow) {
+			collapsibleArrow.style.transform = 'rotateX(180deg)';
+		}
+
+		if (currentActiveButton) {
 			for (const button of filterButtons) {
 				button.classList.remove('filter-buttons--active');
 			}
@@ -130,7 +79,10 @@ export default async function HeaderFiltering() {
 		}
 
 		sectionFronpageAccommodations.innerHTML = '';
-		createAccommodationListContainerDOM();
+		accommodations.forEach(element => {
+			let accomodationTemplate = createAccommodationContainerDOM(element);
+			sectionFronpageAccommodations.appendChild(accomodationTemplate);
+		});
 	}
 
 	renderHTML();

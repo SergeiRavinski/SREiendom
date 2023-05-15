@@ -1,5 +1,4 @@
 export default function ScrollIntoSection() {
-	
 	//const buttonsScroll = document.querySelectorAll('.header__navigation-scroll');
 	//const sectionElectricGuitars = document.querySelector('.section__main-guitars-title-electric-guitar')
 	//const sectionBassGuitars = document.querySelector('.section__main-guitars-title-bass-guitar');

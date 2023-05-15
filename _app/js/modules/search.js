@@ -1,4 +1,5 @@
 import { sanity } from '../sanity.js';
+import createMapboxContainerDOM from './createMapboxContainer.js';
 
 export default async function Search() {
 	let accommodationSearchText = '';
@@ -21,6 +22,7 @@ export default async function Search() {
 		await fetchAccommodations();
 		inputRenderHTML();
 		renderHTML();
+		createMapboxContainerDOM(foundAccommodation);
 	}
 
 	function handleCloseButton() {

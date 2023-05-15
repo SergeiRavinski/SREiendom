@@ -77,12 +77,12 @@ export default {
 				{
 					title: 'Latitude',
 					name: 'latitude',
-					type: 'string',
+					type: 'number',
 				},
 				{
 					title: 'Longitude',
 					name: 'longitude',
-					type: 'string',
+					type: 'number',
 				}
 			]
 		},

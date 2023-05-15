@@ -8,6 +8,7 @@
 	top: 0;
 	min-width: 17rem;
 	z-index: 30;
+	transition: all 0.8s ease-in-out;
 	/*box-shadow: 0.05rem 0.05rem 1rem var(--secondary-dark);*/
 }
 

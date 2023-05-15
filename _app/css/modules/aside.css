@@ -148,13 +148,19 @@
 	color: var(--secondary-dark);
 }
 
-.filtering__mapbox {
+#filtering__mapbox {
 	width: 100%;
+	min-height: 15rem;
 }
 
-.filtering__mapbox img {
-	width: 100%;
-}
+.marker {
+	cursor: pointer;
+	background-image: url('/_app/assets/icons/location.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 1.6rem;
+	height: 1.8rem;
+ }
 
 @media screen and (max-width: 900px) {
 	.filtering {

@@ -1,5 +1,4 @@
-export default function createAccommodationContainerDOM(accommodations, container) {	
-	accommodations.forEach(element => {
+export default function createAccommodationContainerDOM(accommodationData) {	
 		const accommodationListItem = document.createElement('a');
 		const accommodationListContainer = document.createElement('div');
 		const accommodationListItemImage = document.createElement('img');
@@ -28,13 +27,13 @@ export default function createAccommodationContainerDOM(accommodations, containe
 		accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
 		
 		accommodationListItem.href = '/';
-		accommodationListItemImage.src = `${element.image}`;
+		accommodationListItemImage.src = `${accommodationData.image}`;
 		accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
 		accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
 		accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
-		accommodationListItemCounty.innerHTML = `${element.city}, ${element.county}`;
-		accommodationListItemBeds.innerText = `${element.beds} beds`;
-		accommodationListItemPrice.innerText = `${element.price} kr NOK`;
+		accommodationListItemCounty.innerHTML = `${accommodationData.city}, ${accommodationData.county.charAt(0).toUpperCase() + accommodationData.county.slice(1)}`;
+		accommodationListItemBeds.innerText = `${accommodationData.beds} beds`;
+		accommodationListItemPrice.innerText = `${accommodationData.price} kr NOK`;
 		accommodationListItemText.innerText = 'night';
 
 		accommodationListItem.append(
@@ -56,8 +55,6 @@ export default function createAccommodationContainerDOM(accommodations, containe
 			accommodationListItemPrice,
 			accommodationListItemText
 		);
-		container.appendChild(accommodationListItem)
-	});	
 		
-	return container;
+	return accommodationListItem;
 }

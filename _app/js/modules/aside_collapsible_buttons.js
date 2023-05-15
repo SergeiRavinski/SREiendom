@@ -1,4 +1,4 @@
-export default function asideCollapsibleButtons() {
+export default function AsideCollapsibleButtons() {
 	const filterButtons = document.querySelectorAll('.filtering__collapsible-button');
 
 	for (const button of filterButtons) {
@@ -15,5 +15,6 @@ export default function asideCollapsibleButtons() {
 		
 		currentOptions.style.display = currentOptions.style.display === 'block' ? 'none' : 'block';
 		currentButtonArrow.style.transform = currentButtonArrow.style.transform === 'rotateX(180deg)' ? 'rotateX(0deg)' : 'rotateX(180deg)';
+		currentButtonArrow.style.transition = '0.3s';
 	}
 }

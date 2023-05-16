@@ -26,7 +26,7 @@ export default function createAccommodationContainerDOM(accommodationData) {
 		accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
 		accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
 		
-		accommodationListItem.href = '/';
+		//accommodationListItem.href = './modal_window/index.html';
 		accommodationListItemImage.src = `${accommodationData.image}`;
 		accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
 		accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";

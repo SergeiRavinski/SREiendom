@@ -12,6 +12,10 @@
 	/*box-shadow: 0.05rem 0.05rem 1rem var(--secondary-dark);*/
 }
 
+.filter-buttons--invisible {
+	display: none;
+}
+
 .filter-buttons__container {
 	display: flex;
 	align-items: center;

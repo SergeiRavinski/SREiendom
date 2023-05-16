@@ -15,6 +15,10 @@ main {
 	gap: 5%;
 }
 
+.main--invisible {
+	display: none;
+}
+
 @keyframes fade {
 	from {
 		opacity: 0;
@@ -25,7 +29,8 @@ main {
 }
 
 @media screen and (min-width: 1920px) {
-	body {
+	body, 
+	.main__modal-window {
 		max-width: 1920px;
 		margin: 0 auto;
 	}	

@@ -6,9 +6,9 @@ import FrontpageAccommodations from './frontpage_accommodations.js';
 export default function AsideFiltering() {
 	//let checkboxDataFilter = [];
 
-	let checkboxDataFilterPropertyType = [] || null;
-	let checkboxDataFilterCounty = [] || null;
-	let checkboxDataFilterBeds = [] || null;
+	let checkboxDataFilterPropertyType = [];
+	let checkboxDataFilterCounty = [];
+	let checkboxDataFilterBeds = [];
 
 	let accommodations = [];
 
@@ -135,7 +135,7 @@ export default function AsideFiltering() {
 	//}
 
 	async function fetchAccommodations() {
-		const query = `*[_type == 'accommodation' && property_type in $propertyType && county->name in $countyName && beds in $bedQuantity] | order(price asc) {
+		const query = `*[_type == 'accommodation' && property_type in $propertyType || county->name in $countyName || beds in $bedQuantity] | order(price asc) {
 			"image": gallery[0].asset->url,
 			"county": county->name,
 			city,

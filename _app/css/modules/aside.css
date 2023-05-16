@@ -5,7 +5,7 @@
 	font-size: var(--extra-small-text-size);
 	min-width: 17rem;
 	z-index: 20;
-	height: 100%;
+	overflow-y: scroll;
 }
 
 .filtering .filtering__collapsible:first-of-type {
@@ -150,7 +150,8 @@
 
 #filtering__mapbox {
 	width: 100%;
-	min-height: 15rem;
+	min-height: 20rem;
+	border-radius: var(--border-radius);
 }
 
 .marker {

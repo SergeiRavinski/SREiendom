@@ -2,7 +2,7 @@
 	--large-text-size: 2.5rem;
 	--medium-text-size: 1.6rem;
 	--small-text-size: 1.2rem;
-	--extra-small-text-size: 0.8rem;
+	--extra-small-text-size: 1rem;
 
 	--mobile-large-text-size: 1rem;
 	--mobile-medium-text-size: 0.8rem;
@@ -22,7 +22,6 @@
 	--primary-light-transparent: rgba(255, 255, 255, 0.8);
 
 	--gap-navigation: 3rem;
-	--gap-navigation-mobile: 1rem;
 	--gap-filter-buttons: 2rem;
 	--gap-filter-buttons-collapsible: 2rem;
 	--gap-filter-buttons-mobile: 1rem;
@@ -31,10 +30,18 @@
 	--gap-frontpage-grid: 1rem;
 	--gap-button-scroll-up: 3rem;
 	--mobile-gap-button-scroll-up: 1rem;
-
+	
+	--gap-modal-window-body-row: 18rem;
+	--gap-modal-window-grid: 0.5rem;
+	--gap-modal-window-essentials: 1.5rem;
+	--gap-modal-window-essentials-li: 0.5rem;
+	--gap-modal-window-form: 1.5rem;
+	--gap-modal-window-form-button: 1rem;
+	
 	--gap-frontpage-grid-mobile: 0.3rem;
-
-	--primary-font-family: 'Roboto', sans-serif;
+	--gap-navigation-mobile: 1rem;
 
 	--border-radius: 0.2rem;
+
+	--primary-font-family: 'Roboto', sans-serif;
 }

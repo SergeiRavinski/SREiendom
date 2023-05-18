@@ -89,6 +89,11 @@
 	-webkit-appearance: none;
 }
 
+.filtering__price-range-search:hover {
+	background: var(--secondary-dark);
+	transition: all 0.25s ease-in-out;
+}	
+
 .filtering__search-bar-input::placeholder,
 .filtering__price-range-min-price::placeholder,
 .filtering__price-range-max-price::placeholder {

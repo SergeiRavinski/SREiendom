@@ -1,5 +1,5 @@
 export default function createAccommodationContainerDOM(accommodationData) {	
-		const accommodationListItem = document.createElement('a');
+		const accommodationListItem = document.createElement('button');
 		const accommodationListContainer = document.createElement('div');
 		const accommodationListItemImage = document.createElement('img');
 		const accommodationListItemButtonArrowLeft = document.createElement('button');

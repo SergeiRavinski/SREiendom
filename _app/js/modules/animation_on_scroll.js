@@ -5,6 +5,10 @@ export default function AnimationOnScroll() {
 	window.addEventListener('scroll', animateElements);
 
 	function animateElements() {
+		renderHTML();
+	}
+
+	function renderHTML() {
 		if (window.pageYOffset >= offset) {
 			filteringHeader.classList.add('filter-buttons__container--animated');
 		} else {

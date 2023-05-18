@@ -5,11 +5,7 @@ export default function ScrollUp() {
 	buttonUp.addEventListener('click', handleButtonArrowUp);
 
 	function handleWindowScroll() {
-		if (window.pageYOffset >= window.innerHeight * 0.01) {
-			buttonUp.classList.add('main__button-scroll-up--visible');
-		} else {
-			buttonUp.classList.remove('main__button-scroll-up--visible');
-		}
+		renderHTML();
 	}
 
 	function handleButtonArrowUp() {
@@ -17,6 +13,14 @@ export default function ScrollUp() {
 			top: 0,
 			left: 0,
 			behavior: "smooth",
-		})
+		});
+	}
+
+	function renderHTML() {
+		if (window.pageYOffset >= window.innerHeight * 0.01) {
+			buttonUp.classList.add('main__button-scroll-up--visible');
+		} else {
+			buttonUp.classList.remove('main__button-scroll-up--visible');
+		}
 	}
 }

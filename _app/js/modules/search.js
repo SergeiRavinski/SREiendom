@@ -1,7 +1,8 @@
 import { sanity } from '../sanity.js';
-import createMapboxContainerDOM from './createMapboxContainer.js';
+import createMapboxContainerDOM from './create_mapbox_container.js';
 import FrontpageAccommodations from './frontpage_accommodations.js';
 import createAccommodationContainerDOM from "./accommodation_container.js";
+import createPopup from './create_popup.js';
 
 export default async function Search() {
 	let accommodationSearchText = '';
@@ -35,13 +36,15 @@ export default async function Search() {
 	async function fetchAccommodations() {
 		const query = `*[_type == 'accommodation' && [county->name, city, beds] match [$countyName + '*', $cityName + '*', $bedsQuantity + '*']] | order(price asc) {
 			"image": gallery[0].asset->url,
+			"images": gallery[].asset->url,
 			"county": county->name,
 			city,
 			beds,
 			price,
 			"longitude": location{longitude},
 			"latitude": location{latitude},
-			title
+			title,
+			essentials
 		}`;
 
 		const params = {
@@ -73,6 +76,10 @@ export default async function Search() {
 			foundAccommodation.forEach(element => {
 				let accomodationTemplate = createAccommodationContainerDOM(element);
 				sectionFronpageAccommodations.appendChild(accomodationTemplate);
+
+				accomodationTemplate.addEventListener('click', () => {
+					createPopup(element);
+				});
 			});
 		} else {
 			foundAccommodationListResultTitle.innerText = `Sorry, but nothing matched your search terms. Please try again with some different keywords.`; 

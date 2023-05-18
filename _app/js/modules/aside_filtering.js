@@ -1,7 +1,8 @@
 import { sanity } from '../sanity.js';
 import createAccommodationContainerDOM from './accommodation_container.js';
-import createMapboxContainerDOM from './createMapboxContainer.js';
+import createMapboxContainerDOM from './create_mapbox_container.js';
 import FrontpageAccommodations from './frontpage_accommodations.js';
+import createPopup from './create_popup.js';
 
 export default function AsideFiltering() {
 	//let checkboxDataFilter = [];
@@ -137,6 +138,7 @@ export default function AsideFiltering() {
 	async function fetchAccommodations() {
 		const query = `*[_type == 'accommodation' && property_type in $propertyType || county->name in $countyName || beds in $bedQuantity] | order(price asc) {
 			"image": gallery[0].asset->url,
+			"images": gallery[].asset->url,
 			"county": county->name,
 			city,
 			beds,
@@ -145,7 +147,8 @@ export default function AsideFiltering() {
 			property_type,
 			"longitude": location{longitude},
 			"latitude": location{latitude},
-			title
+			title,
+			essentials
 		}`;
 
 		//const params = {
@@ -174,6 +177,10 @@ export default function AsideFiltering() {
 		accommodations.forEach(element =>{
 			let accomodationTemplate = createAccommodationContainerDOM(element);
 			sectionFronpageAccommodations.appendChild(accomodationTemplate);
+
+			accomodationTemplate.addEventListener('click', () => {
+				createPopup(element);
+			});
 	});
 	}
 }

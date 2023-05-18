@@ -31,15 +31,16 @@
 	--gap-button-scroll-up: 3rem;
 	--mobile-gap-button-scroll-up: 1rem;
 	
-	--gap-modal-window-body-row: 18rem;
-	--gap-modal-window-grid: 0.5rem;
-	--gap-modal-window-essentials: 1.5rem;
-	--gap-modal-window-essentials-li: 0.5rem;
-	--gap-modal-window-form: 1.5rem;
-	--gap-modal-window-form-button: 1rem;
+	--gap-popup-body-row: 18rem;
+	--gap-popup-grid: 0.5rem;
+	--gap-popup-essentials: 1.5rem;
+	--gap-popup-essentials-li: 0.5rem;
+	--gap-popup-form: 1.5rem;
+	--gap-popup-form-button: 1rem;
 	
 	--gap-frontpage-grid-mobile: 0.3rem;
 	--gap-navigation-mobile: 1rem;
+	--gap-popup-grid-mobile: 0.2rem;
 
 	--border-radius: 0.2rem;
 

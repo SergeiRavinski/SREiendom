@@ -6,6 +6,7 @@
 	min-width: 17rem;
 	z-index: 20;
 	overflow-y: scroll;
+	height: 100%;
 }
 
 .filtering .filtering__collapsible:first-of-type {
@@ -88,6 +89,11 @@
 	cursor: pointer;
 	-webkit-appearance: none;
 }
+
+.filtering__price-range-search:hover {
+	background: var(--secondary-dark);
+	transition: all 0.25s ease-in-out;
+}	
 
 .filtering__search-bar-input::placeholder,
 .filtering__price-range-min-price::placeholder,

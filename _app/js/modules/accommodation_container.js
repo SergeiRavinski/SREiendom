@@ -1,7 +1,20 @@
 export default function createAccommodationContainerDOM(accommodationData) {	
+		const images = accommodationData.images;
+
 		const accommodationListItem = document.createElement('button');
 		const accommodationListContainer = document.createElement('div');
-		const accommodationListItemImage = document.createElement('img');
+
+
+		const accommodationListContainerGallery = document.createElement('div');
+		for (const image of images) {
+			const accommodationListItemImage = document.createElement('img');
+			accommodationListItemImage.setAttribute('alt', 'Image of a house');
+			accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+			accommodationListItemImage.src = `${image}`;
+			accommodationListContainerGallery.appendChild(accommodationListItemImage)
+		}
+
+		//const accommodationListItemImage = document.createElement('img');
 		const accommodationListItemButtonArrowLeft = document.createElement('button');
 		const accommodationListItemIconArrowLeft = document.createElement('img');
 		const accommodationListItemButtonArrowRight = document.createElement('button');
@@ -14,20 +27,21 @@ export default function createAccommodationContainerDOM(accommodationData) {
 		const accommodationListItemPrice = document.createElement('h4');
 		const accommodationListItemText = document.createElement('h5');
 	
-		accommodationListItemImage.setAttribute('alt', 'Image of a house');
+		//accommodationListItemImage.setAttribute('alt', 'Image of a house');
 		accommodationListItemIconArrowLeft.setAttribute('alt', 'Arrow left icon');
 		accommodationListItemIconArrowRight.setAttribute('alt', 'Arrow right icon');
 		accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
 		accommodationListItemCounty.setAttribute('lang', 'no');
 
 		accommodationListItem.className = 'frontpage_accommodations__accommodation';
-		accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+		//accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+		accommodationListContainerGallery.className = 'frontpage_accommodations__container-gallery';
 		accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
 		accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
 		accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
 		
 		//accommodationListItem.href = './modal_window/index.html';
-		accommodationListItemImage.src = `${accommodationData.image}`;
+		//accommodationListItemImage.src = `${accommodationData.image}`;
 		accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
 		accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
 		accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
@@ -43,7 +57,8 @@ export default function createAccommodationContainerDOM(accommodationData) {
 			accommodationListItemSpan
 		);
 		accommodationListContainer.append(
-			accommodationListItemImage,
+			//accommodationListItemImage,
+			accommodationListContainerGallery,
 			accommodationListItemButtonArrowLeft,
 			accommodationListItemButtonArrowRight,
 			accommodationListItemButtonHeart

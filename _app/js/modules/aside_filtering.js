@@ -3,6 +3,7 @@ import createAccommodationContainerDOM from './accommodation_container.js';
 import createMapboxContainerDOM from './create_mapbox_container.js';
 import FrontpageAccommodations from './frontpage_accommodations.js';
 import createPopup from './create_popup.js';
+import slideshow from './slideshow.js';
 
 export default function AsideFiltering() {
 	//let checkboxDataFilter = [];
@@ -46,6 +47,7 @@ export default function AsideFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
+		slideshow();
 
 		if (checkboxDataFilterPropertyType.length === 0) {
 			FrontpageAccommodations();
@@ -57,6 +59,7 @@ export default function AsideFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
+		slideshow();
 
 		if (checkboxDataFilterCounty.length === 0) {
 			FrontpageAccommodations();
@@ -68,6 +71,7 @@ export default function AsideFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
+		slideshow();
 
 		if (checkboxDataFilterBeds.length === 0) {
 			FrontpageAccommodations();
@@ -181,6 +185,6 @@ export default function AsideFiltering() {
 			accomodationTemplate.addEventListener('click', () => {
 				createPopup(element);
 			});
-	});
+		});
 	}
 }

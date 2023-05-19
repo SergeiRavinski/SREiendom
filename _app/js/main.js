@@ -7,7 +7,6 @@ import AsideCollapsibleButtons from "./modules/aside_collapsible_buttons.js"
 import AsideFiltering from "./modules/aside_filtering.js"
 import ScrollUp from "./modules/scroll_up.js"
 import ScrollIntoSection from "./modules/scroll_into_section.js"
-//import Popup from "./modules/popup.js"
 
 Header();
 AnimationOnScroll();
@@ -18,4 +17,3 @@ AsideCollapsibleButtons();
 AsideFiltering();
 ScrollUp();
 ScrollIntoSection();
-//Popup(await FrontpageAccommodations());

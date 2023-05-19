@@ -3,6 +3,7 @@ import createMapboxContainerDOM from './create_mapbox_container.js';
 import FrontpageAccommodations from './frontpage_accommodations.js';
 import createAccommodationContainerDOM from "./accommodation_container.js";
 import createPopup from './create_popup.js';
+import slideshow from './slideshow.js';
 
 export default async function Search() {
 	let accommodationSearchText = '';
@@ -26,6 +27,7 @@ export default async function Search() {
 		inputRenderHTML();
 		renderHTML();
 		createMapboxContainerDOM(foundAccommodation);
+		slideshow();
 	}
 
 	function handleCloseButton() {

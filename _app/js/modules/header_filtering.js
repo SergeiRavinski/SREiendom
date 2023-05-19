@@ -2,6 +2,7 @@ import { sanity } from '../sanity.js';
 import createAccommodationContainerDOM from "./accommodation_container.js";
 import createMapboxContainerDOM from "./create_mapbox_container.js";
 import createPopup from './create_popup.js';
+import slideshow from './slideshow.js';
 
 export default async function HeaderFiltering() {
 	let datasetCategory = '';
@@ -23,6 +24,7 @@ export default async function HeaderFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
+		slideshow();
 	}
 
 	function addUnderlineToActiveButton(event) {

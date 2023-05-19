@@ -2,6 +2,7 @@ import { sanity } from '../sanity.js';
 import createAccommodationContainerDOM from "./accommodation_container.js";
 import createMapboxContainer from "./create_mapbox_container.js";
 import createPopup from "./create_popup.js";
+import slideshow from './slideshow.js';
 
 export default async function FrontpageAccommodations() {
 	const query = `*[_type == 'accommodation'] | order(price asc) {
@@ -32,4 +33,5 @@ export default async function FrontpageAccommodations() {
 
 	renderHTML();
 	createMapboxContainer(accommodations);
+	slideshow();
 }

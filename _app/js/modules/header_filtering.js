@@ -24,7 +24,6 @@ export default async function HeaderFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
-		slideshow();
 	}
 
 	function addUnderlineToActiveButton(event) {
@@ -85,12 +84,14 @@ export default async function HeaderFiltering() {
 
 		sectionFronpageAccommodations.innerHTML = '';
 		accommodations.forEach(element => {
-			let accomodationTemplate = createAccommodationContainerDOM(element);
-			sectionFronpageAccommodations.appendChild(accomodationTemplate);
+			let accommodationTemplate = createAccommodationContainerDOM(element);
+			sectionFronpageAccommodations.appendChild(accommodationTemplate);
 
-			accomodationTemplate.addEventListener('click', () => {
+			accommodationTemplate.addEventListener('click', () => {
 				createPopup(element);
 			});
+
+			slideshow(accommodationTemplate);
 		});
 	}
 

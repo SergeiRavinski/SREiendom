@@ -22,16 +22,17 @@ export default async function FrontpageAccommodations() {
 
 	function renderHTML() {
 		accommodations.forEach(element => {
-			let accomodationTemplate = createAccommodationContainerDOM(element);
-			sectionFronpageAccommodations.appendChild(accomodationTemplate);
+			let accommodationTemplate = createAccommodationContainerDOM(element);
+			sectionFronpageAccommodations.appendChild(accommodationTemplate);
 
-			accomodationTemplate.addEventListener('click', () => {
+			accommodationTemplate.addEventListener('click', () => {
 				createPopup(element);
 			});
+
+			slideshow(accommodationTemplate);
 		});
 	}
 
 	renderHTML();
 	createMapboxContainer(accommodations);
-	slideshow();
 }

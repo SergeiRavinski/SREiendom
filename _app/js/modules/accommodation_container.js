@@ -1,17 +1,19 @@
 export default function createAccommodationContainerDOM(accommodationData) {	
 		const images = accommodationData.images;
-
 		const accommodationListItem = document.createElement('button');
 		const accommodationListContainer = document.createElement('div');
-
-
 		const accommodationListContainerGallery = document.createElement('div');
+		const accommodationListContainerDots = document.createElement('div');
+
 		for (const image of images) {
 			const accommodationListItemImage = document.createElement('img');
+			const accommodationListItemDot = document.createElement('div');
 			accommodationListItemImage.setAttribute('alt', 'Image of a house');
 			accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+			accommodationListItemDot.className = 'frontpage_accommodations__dot';
 			accommodationListItemImage.src = `${image}`;
-			accommodationListContainerGallery.appendChild(accommodationListItemImage)
+			accommodationListContainerGallery.appendChild(accommodationListItemImage);
+			accommodationListContainerDots.appendChild(accommodationListItemDot);
 		}
 
 		//const accommodationListItemImage = document.createElement('img');
@@ -35,7 +37,10 @@ export default function createAccommodationContainerDOM(accommodationData) {
 
 		accommodationListItem.className = 'frontpage_accommodations__accommodation';
 		//accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
+		accommodationListContainer.className = 'frontpage_accommodations__container';
 		accommodationListContainerGallery.className = 'frontpage_accommodations__container-gallery';
+		accommodationListContainerDots.className = 'frontpage_accommodations__dots';
+		accommodationListContainerDots.childNodes[0].classList.add('frontpage_accommodations__dot--active');
 		accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
 		accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
 		accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
@@ -59,6 +64,7 @@ export default function createAccommodationContainerDOM(accommodationData) {
 		accommodationListContainer.append(
 			//accommodationListItemImage,
 			accommodationListContainerGallery,
+			accommodationListContainerDots,
 			accommodationListItemButtonArrowLeft,
 			accommodationListItemButtonArrowRight,
 			accommodationListItemButtonHeart

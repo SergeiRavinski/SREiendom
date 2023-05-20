@@ -47,7 +47,6 @@ export default function AsideFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
-		slideshow();
 
 		if (checkboxDataFilterPropertyType.length === 0) {
 			FrontpageAccommodations();
@@ -179,12 +178,14 @@ export default function AsideFiltering() {
 		sectionFronpageAccommodations.innerHTML = '';
 
 		accommodations.forEach(element =>{
-			let accomodationTemplate = createAccommodationContainerDOM(element);
-			sectionFronpageAccommodations.appendChild(accomodationTemplate);
+			let accommodationTemplate = createAccommodationContainerDOM(element);
+			sectionFronpageAccommodations.appendChild(accommodationTemplate);
 
-			accomodationTemplate.addEventListener('click', () => {
+			accommodationTemplate.addEventListener('click', () => {
 				createPopup(element);
 			});
+
+			slideshow(accommodationTemplate);
 		});
 	}
 }

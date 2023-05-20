@@ -27,7 +27,6 @@ export default async function Search() {
 		inputRenderHTML();
 		renderHTML();
 		createMapboxContainerDOM(foundAccommodation);
-		slideshow();
 	}
 
 	function handleCloseButton() {
@@ -76,12 +75,14 @@ export default async function Search() {
 			foundAccommodationListResultTitle.innerText = `Search results for: ${accommodationSearchText}`; 
 
 			foundAccommodation.forEach(element => {
-				let accomodationTemplate = createAccommodationContainerDOM(element);
-				sectionFronpageAccommodations.appendChild(accomodationTemplate);
+				let accommodationTemplate = createAccommodationContainerDOM(element);
+				sectionFronpageAccommodations.appendChild(accommodationTemplate);
 
-				accomodationTemplate.addEventListener('click', () => {
+				accommodationTemplate.addEventListener('click', () => {
 					createPopup(element);
 				});
+
+				slideshow(accommodationTemplate);
 			});
 		} else {
 			foundAccommodationListResultTitle.innerText = `Sorry, but nothing matched your search terms. Please try again with some different keywords.`; 

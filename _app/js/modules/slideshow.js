@@ -1,22 +1,11 @@
-export default function slideshow() {
+export default function slideshow(accommodationTemplate) {
 	let currentIndex = 0;
-	
-	/**
-	 * @TODO Add currentIndex into teh loop to get correct index
-	 */
 
-	const previousButtons = document.querySelectorAll('.frontpage_accommodations__accommodation-arrow-left');
-	const nextButtons = document.querySelectorAll('.frontpage_accommodations__accommodation-arrow-right');
+	const previousButtons = accommodationTemplate.childNodes[0].childNodes[2];
+	const nextButtons = accommodationTemplate.childNodes[0].childNodes[3];
 	
-	//window.addEventListener('keydown', handleKeydown);
-
-	previousButtons.forEach(element => {
-		element.addEventListener('click', handlePreviousButtonClick);
-	});
-	
-	nextButtons.forEach(element => {
-		element.addEventListener('click', handleNextButtonClick);
-	});
+	previousButtons.addEventListener('click', handlePreviousButtonClick);	
+	nextButtons.addEventListener('click', handleNextButtonClick);
 	
 	function handlePreviousButtonClick(event) {
 		event.stopPropagation();
@@ -58,7 +47,7 @@ export default function slideshow() {
 
 	function renderHTML(slides, slideWidth, dots) {		
 		for (const slide of slides) {
-			slide.style.transform = `translateX(-${slideWidth * currentIndex}px)`
+			slide.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 		}
 
 		for (const dot of dots) {

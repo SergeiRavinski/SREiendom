@@ -14,11 +14,11 @@ export default function createPopup(element) {
 
 	buttonClosePopup.addEventListener('click', handleButtomCloseClick);
 
-	renderPopup();
+	renderHTML();
 	getNewData(element);	
 	createMapboxPopupDOM(element);
 
-	function renderPopup() {
+	function renderHTML() {
 		window.scrollTo({
 			top: 0,
 			left: 0,

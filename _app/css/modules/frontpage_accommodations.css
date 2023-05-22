@@ -186,6 +186,34 @@
 	right: 3%;
 }
 
+.frontpage_accommodations__accommodation-heart--animated {
+	position: absolute;
+	z-index: 100;
+	top: 5%;
+	right: 3%;
+	background: url(/_app/assets/icons/heart_red.svg) center / contain no-repeat;
+	filter: drop-shadow(0.1rem 0.1rem 0.8rem var(--secondary-dark));
+	animation: shake 300ms;
+}
+
+@keyframes shake {
+	0%{
+		translate: 0.150rem;
+	}
+	25%{
+		translate: -0.150rem;
+	}
+	50%{
+		translate: 0.1rem;
+	}
+	75%{
+		translate: -0.1rem;
+	}
+	100%{
+		translate: 0;
+	}
+}
+
 .main__button-scroll-up {
 	position: fixed;
 	right: var(--gap-button-scroll-up);
@@ -200,7 +228,7 @@
 }
 
 .main__button-scroll-up:hover {
-	background: var(--secondary-light);
+	background: var(--primary-dark-transparent);
 }
 
 .main__button-scroll-up img {

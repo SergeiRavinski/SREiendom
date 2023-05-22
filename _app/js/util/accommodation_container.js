@@ -47,9 +47,9 @@ export default function createAccommodationContainerDOM(accommodationData) {
 		
 		//accommodationListItem.href = './modal_window/index.html';
 		//accommodationListItemImage.src = `${accommodationData.image}`;
-		accommodationListItemIconArrowLeft.src = "/_app/assets/icons/arrow_left.svg";
-		accommodationListItemIconArrowRight.src = "/_app/assets/icons/arrow_right.svg";
-		accommodationListItemIconHeart.src = "/_app/assets/icons/heart_white.svg";
+		accommodationListItemIconArrowLeft.src = '/_app/assets/icons/arrow_left.svg';
+		accommodationListItemIconArrowRight.src = '/_app/assets/icons/arrow_right.svg';
+		accommodationListItemIconHeart.src = '/_app/assets/icons/heart_white.svg';
 		accommodationListItemCounty.innerHTML = `${accommodationData.city}, ${accommodationData.county.charAt(0).toUpperCase() + accommodationData.county.slice(1)}`;
 		accommodationListItemBeds.innerText = `${accommodationData.beds} beds`;
 		accommodationListItemPrice.innerText = `${accommodationData.price} kr NOK`;

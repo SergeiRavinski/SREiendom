@@ -1,13 +1,13 @@
 :root {
-	--large-text-size: 2.5rem;
-	--medium-text-size: 1.6rem;
-	--small-text-size: 1.2rem;
-	--extra-small-text-size: 1rem;
+	--large-text-size: 1.563rem;
+	--medium-text-size: 1.25rem;
+	--small-text-size: 1rem;
+	--extra-small-text-size: 0.8rem;
 
 	--mobile-large-text-size: 1rem;
 	--mobile-medium-text-size: 0.8rem;
-	--mobile-small-text-size: 0.65rem;
-	--mobile-extra-small-text-size: 0.5rem;
+	--mobile-small-text-size: 0.64rem;
+	--mobile-extra-small-text-size: 0.512rem;
 
 	--primary-dark: #19647E;
 	--secondary-dark: #2B4141;
@@ -41,6 +41,8 @@
 	--gap-frontpage-grid-mobile: 0.3rem;
 	--gap-navigation-mobile: 1rem;
 	--gap-popup-grid-mobile: 0.2rem;
+
+	--gap-wishlist: 0.3rem;
 
 	--border-radius: 0.2rem;
 

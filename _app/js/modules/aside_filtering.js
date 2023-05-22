@@ -1,9 +1,10 @@
 import { sanity } from '../sanity.js';
-import createAccommodationContainerDOM from './accommodation_container.js';
-import createMapboxContainerDOM from './create_mapbox_container.js';
+import createAccommodationContainerDOM from "../util/accommodation_container.js";
+import createMapboxContainerDOM from '../util/create_mapbox_container.js';
 import FrontpageAccommodations from './frontpage_accommodations.js';
 import createPopup from './create_popup.js';
-import slideshow from './slideshow.js';
+import slideshow from '../util/slideshow.js';
+import wishlist from './wishlist.js';
 
 export default function AsideFiltering() {
 	//let checkboxDataFilter = [];
@@ -47,6 +48,7 @@ export default function AsideFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
+		wishlist();
 
 		if (checkboxDataFilterPropertyType.length === 0) {
 			FrontpageAccommodations();
@@ -59,6 +61,7 @@ export default function AsideFiltering() {
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
 		slideshow();
+		wishlist();
 
 		if (checkboxDataFilterCounty.length === 0) {
 			FrontpageAccommodations();
@@ -71,6 +74,7 @@ export default function AsideFiltering() {
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
 		slideshow();
+		wishlist();
 
 		if (checkboxDataFilterBeds.length === 0) {
 			FrontpageAccommodations();

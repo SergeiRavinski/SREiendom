@@ -1,19 +1,20 @@
 export default function Header() {
-
 	let isOpenedNavigationMobile = false;
 	let isOpenedWishlist = false;
+
 	const buttonHamburgerMenu = document.querySelector('.header__mobile-button');
-	const wishlistButton = document.querySelector('.header__wishlist-link');
-	const mobileNavigation = document.querySelector('.header__mobile-navigation');
-	//const wishlist = document.querySelector('.main__wishlist');
-	//const main = document.querySelector('.main');
+	const wishlistButton = document.querySelector('.header__wishlist-button');
+	const mobileNavigation = document.querySelector('.body__mobile-navigation');
+	const wishlist = document.querySelector('.body__wishlist');
+	const main = document.querySelector('main');
 
 	buttonHamburgerMenu.addEventListener('click', handleButtonHamburgerMenu);
 	wishlistButton.addEventListener('click', handleWishlistButton);
-	//main.addEventListener('click', handleClickOverBody);
-	//wishlist.addEventListener('click', handleClickOverWishlist);
+	main.addEventListener('click', handleClickOverMain);
+	wishlist.addEventListener('click', handleClickOverWishlist);
 	mobileNavigation.addEventListener('click', handleClickOverMobileNavigation);
 	window.addEventListener('keydown', handleKeyDown);
+	//window.addEventListener('scroll', handleScrollDown);
 
 	function visibilityHamburgerMenu() {
 		isOpenedNavigationMobile = !isOpenedNavigationMobile;
@@ -33,7 +34,7 @@ export default function Header() {
 		renderHTMLWishlist();
 	}
 
-	function handleClickOverBody(event) {
+	function handleClickOverMain(event) {
 		event.stopPropagation();
 		renderHTMLCloseMenus();
 	}
@@ -46,11 +47,15 @@ export default function Header() {
 		event.stopPropagation();
 	}
 
+	//function handleScrollDown() {
+	//	renderHTMLCloseMenus();
+	//}
+
 	function handleKeyDown(event) {
 		if(event.keyCode === 27) {
 			(isOpenedWishlist = false);
-			//wishlist.classList.remove('main__wishlist--visible');
-			wishlistButton.classList.remove('header_naviga-buttontion-wishlist--active');
+			wishlist.classList.remove('body__wishlist--visible');
+			wishlistButton.classList.remove('header__wishlist-button--active');
 		}
 	}
 
@@ -58,35 +63,35 @@ export default function Header() {
 		if (isOpenedNavigationMobile) {
 			(isOpenedWishlist = false);
 			buttonHamburgerMenu.classList.add('header__mobile-button--opened');
-			mobileNavigation.classList.add('header__mobile-navigation--visible')
-			//wishlist.classList.remove('main__wishlist--visible');
-			wishlistButton.classList.remove('header__navigation-wishlist--active');
+			mobileNavigation.classList.add('body__mobile-navigation--visible')
+			wishlist.classList.remove('body__wishlist--visible');
+			wishlistButton.classList.remove('header__wishlist-button--active');
 		}
 		else {
 			buttonHamburgerMenu.classList.remove('header__mobile-button--opened');
-			mobileNavigation.classList.remove('header__mobile-navigation--visible')
+			mobileNavigation.classList.remove('body__mobile-navigation--visible')
 		}
 	}
 
 	function renderHTMLWishlist() {
 		if (isOpenedWishlist) {
 			(isOpenedNavigationMobile = false);
-			//wishlist.classList.add('main__wishlist--visible');
-			wishlistButton.classList.add('header__navigation-wishlist--active');
+			wishlist.classList.add('body__wishlist--visible');
+			wishlistButton.classList.add('header__wishlist-button--active');
 			buttonHamburgerMenu.classList.remove('header__mobile-button--opened');
-			mobileNavigation.classList.remove('header__mobile-navigation--visible')
+			mobileNavigation.classList.remove('body__mobile-navigation--visible')
 		}
 		else {
-			//wishlist.classList.remove('main__wishlist--visible');
-			wishlistButton.classList.remove('header__navigation-wishlist--active');
+			wishlist.classList.remove('body__wishlist--visible');
+			wishlistButton.classList.remove('header__wishlist-button--active');
 		}
 	}
 
 	function renderHTMLCloseMenus() {
 		buttonHamburgerMenu.classList.remove('header__mobile-button--opened');
-		mobileNavigation.classList.remove('header__mobile-navigation--visible')
-		//wishlist.classList.remove('main__wishlist--visible');
-		wishlistButton.classList.remove('header__navigation-wishlist--active');
+		mobileNavigation.classList.remove('body__mobile-navigation--visible')
+		wishlist.classList.remove('body__wishlist--visible');
+		wishlistButton.classList.remove('header__wishlist-button--active');
 		(isOpenedWishlist = false);
 		(isOpenedNavigationMobile = false);
 	}

@@ -1,9 +1,10 @@
 import { sanity } from '../sanity.js';
-import createMapboxContainerDOM from './create_mapbox_container.js';
+import createMapboxContainerDOM from '../util/create_mapbox_container.js';
 import FrontpageAccommodations from './frontpage_accommodations.js';
-import createAccommodationContainerDOM from "./accommodation_container.js";
+import createAccommodationContainerDOM from "../util/accommodation_container.js";
 import createPopup from './create_popup.js';
-import slideshow from './slideshow.js';
+import slideshow from '../util/slideshow.js';
+import wishlist from './wishlist.js';
 
 export default async function Search() {
 	let accommodationSearchText = '';
@@ -27,6 +28,7 @@ export default async function Search() {
 		inputRenderHTML();
 		renderHTML();
 		createMapboxContainerDOM(foundAccommodation);
+		wishlist();
 	}
 
 	function handleCloseButton() {

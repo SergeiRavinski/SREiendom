@@ -1,8 +1,9 @@
 import { sanity } from '../sanity.js';
-import createAccommodationContainerDOM from "./accommodation_container.js";
-import createMapboxContainerDOM from "./create_mapbox_container.js";
+import createAccommodationContainerDOM from "../util/accommodation_container.js";
+import createMapboxContainerDOM from "../util/create_mapbox_container.js";
 import createPopup from './create_popup.js';
-import slideshow from './slideshow.js';
+import slideshow from '../util/slideshow.js';
+import wishlist from './wishlist.js';
 
 export default async function HeaderFiltering() {
 	let datasetCategory = '';
@@ -24,6 +25,7 @@ export default async function HeaderFiltering() {
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
+		wishlist();
 	}
 
 	function addUnderlineToActiveButton(event) {
@@ -94,6 +96,4 @@ export default async function HeaderFiltering() {
 			slideshow(accommodationTemplate);
 		});
 	}
-
-	renderHTML();
 }

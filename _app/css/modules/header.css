@@ -33,12 +33,24 @@
 	color: var(--secondary-light);
 }
 
+.header__navigation a:hover,
+.header__wishlist-button:hover {
+	text-decoration: underline;
+}
+
+.header__wishlist-button--active {
+	text-decoration: underline;
+}
+
+.body__mobile-navigation-links-wishlist--indicate {
+	color: var(--secondary-dark);
+}
+
 .header__mobile-button {
 	display: none;
 }
 
 @media screen and (max-width: 900px) {
-
 	.header {
 		padding: 0.7rem var(--gap-navigation);
 		height: 3.5rem;
@@ -47,7 +59,6 @@
 }	
 
 @media screen and (max-width: 600px) {
-
 	.header {
 		padding: 0.7rem 0.5rem;
 		height: 3.3rem;

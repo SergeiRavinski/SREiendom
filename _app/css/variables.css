@@ -42,6 +42,12 @@
 	--gap-navigation-mobile: 1rem;
 	--gap-popup-grid-mobile: 0.2rem;
 
+	--gap-about-us: 4rem;
+	--gap-about-us-title: 1.5rem;
+
+	--gap-about-us-mobile: 1.2rem;
+	--gap-about-us-title-mobile: 1rem;
+
 	--gap-wishlist: 0.3rem;
 
 	--border-radius: 0.2rem;

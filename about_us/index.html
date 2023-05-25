@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Find the perfect rental accommodation for your trip to Norway">
+
+		<title>SREiendom</title>
+
+		<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+		
+		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+		<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">		
+		
+		<link rel="stylesheet" href="/_app/css/main.css">
+		<link rel="stylesheet" href="/_app/css/about_us.css">
+		<script type="module" src="/_app/js/about_us.js"></script>
+		<link rel="icon" href="/_app/assets/icons/house.svg">
+	</head>
+	
+	<body>
+
+		<header class="header">
+			<a href="/" class="header__logo">
+				<img src="/_app/assets/icons/logo.svg" alt="Logo image">
+			</a>
+
+			<nav class="header__navigation">
+				<a href="/about_us/index.html">ABOUT US</a>
+				<button class="header__wishlist-button">WISHLIST</button>
+			</nav>
+
+			<button class="header__mobile-button">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</button>
+
+		</header>
+
+		<section class="body__wishlist"></section>
+
+		<section class="body__mobile-navigation">
+			<div class="body__mobile-navigation-links">
+				<button class="body__mobile-navigation-links-about-us">ABOUT US</button>
+				<button class="body__mobile-navigation-links-wishlist">WISHLIST</button>
+			</div>
+		</section>
+
+		<main>
+			<div class="main__image">
+				<img src="" alt="Image of a house">
+			</div>
+
+			<div class="main__history">
+				<div class="main__history-container">
+					<h3>ABOUT US</h3>
+					<p></p>
+				</div>
+			</div>
+
+			<div class="main__opening-hours">
+				<div class="main__opening-hours-container">
+
+					<h3>OPENING HOURS</h3>
+
+					<span>
+						<h4>Monday - Friday</h4>
+						<h4 class="main__opening-hours-monday-friday"></h4>
+					</span>
+
+					<span>
+						<h4>Saturday - Sunday</h4>
+						<h4 class="main__opening-hours-saturday-sunday"></h4>
+					</span>
+
+					<h3>CONTACT</h3>
+
+					<span>
+						<h4>Email address:</h4>
+						<h4 class="main__email-address"></h4>
+					</span>
+
+					<span>
+						<h4>Phone number:</h4>
+						<h4 class="main__phone-number"></h4>
+					</span>
+
+				</div>
+			</div>
+
+			<div class="main__mapbox">
+				<div id="main__mapbox-container"></div>
+			</div>
+		</main>
+
+		<footer>
+			<section class="footer__icons">
+
+				<a href="https://www.facebook.com" class="footer__icon--hovered">
+					<img src="/_app/assets/icons/facebook.svg" alt="Facebook icon">
+				</a>
+
+				<a href="https://www.instagram.com" class="footer__icon--hovered">
+					<img src="/_app/assets/icons/instagram.svg" alt="Instagram icon">
+				</a>
+
+				<a href="https://www.instagram.com" class="footer__icon--hovered">
+					<img src="/_app/assets/icons/twitter.svg" alt="Twitter icon">
+				</a>
+
+				<a href="https://www.instagram.com" class="footer__icon--hovered">
+					<img src="/_app/assets/icons/youtube.svg" alt="Youtube icon">
+				</a>
+
+			</section>
+		</footer>
+
+	</body>
+</html>

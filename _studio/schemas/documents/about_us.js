@@ -4,6 +4,11 @@ export default {
 	type: 'document', 
 	fields: [
 		{
+			title: 'Image',
+			name: 'image',
+			type: 'image'
+		},
+		{
 			title: 'History',
 			name: 'history',
 			type: 'array',
@@ -27,14 +32,24 @@ export default {
 			]
 		},
 		{
-			title: 'Opening Hours', 
-			name: 'openingHours', 
+			title: 'Opening Hours Monday-Friday', 
+			name: 'openingHoursMondayFriday', 
 			type: 'string', 
 		},
 		{
-			title: 'Email',
-			name: 'Email',
+			title: 'Opening Hours Saturday-Sunday', 
+			name: 'openingHoursSaturdaySunday', 
+			type: 'string', 
+		},
+		{
+			title: 'Email address',
+			name: 'emailAddress',
 			type: 'email',
+		},
+		{
+			title: 'Phone number',
+			name: 'phoneNumber',
+			type: 'number',
 		}
 	],
 

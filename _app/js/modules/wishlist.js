@@ -1,6 +1,4 @@
-//import createWishlistContainer from "../util/create_wishlist_container.js";
-
-export default function Wishlist() {
+export default function wishlist() {
 	let removeButtons = [];
 
 	const buttonWishlist = document.querySelector('.header__wishlist-button');

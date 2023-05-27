@@ -139,6 +139,7 @@
 	object-fit: cover;
 	flex: 0 0 100%;
 	transition: transform 0.5s ease-in-out;
+	content-visibility: auto;
 }
 
 .frontpage_accommodations__accommodation h3 {

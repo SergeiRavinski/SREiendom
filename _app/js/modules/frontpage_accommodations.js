@@ -3,6 +3,7 @@ import createAccommodationContainerDOM from "../util/accommodation_container.js"
 import createMapboxContainer from "../util/create_mapbox_container.js";
 import createPopup from "./create_popup.js";
 import slideshow from '../util/slideshow.js';
+import wishlist from './wishlist.js';
 
 export default async function FrontpageAccommodations() {
 	const query = `*[_type == 'accommodation'] | order(price asc) {
@@ -35,4 +36,5 @@ export default async function FrontpageAccommodations() {
 
 	renderHTML();
 	createMapboxContainer(accommodations);
+	wishlist();
 }

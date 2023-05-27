@@ -6,144 +6,123 @@ import createPopup from './create_popup.js';
 import slideshow from '../util/slideshow.js';
 import wishlist from './wishlist.js';
 
-export default function AsideFiltering() {
-	//let checkboxDataFilter = [];
-
+export default async function AsideFiltering() {
 	let checkboxDataFilterPropertyType = [];
 	let checkboxDataFilterCounty = [];
 	let checkboxDataFilterBeds = [];
-
+	let propertyParameter = '';
+	let countyParameter = '';
+	let bedsParameter = '';
 	let accommodations = [];
 
-	//const checkboxes = document.querySelectorAll('.filtering__checkbox');
-
-	const checkboxesPropertyType = document.querySelectorAll('.filtering__checkbox-propertytype');
-	const checkboxesCounty = document.querySelectorAll('.filtering__checkbox-countyname');
-	const checkboxesBeds = document.querySelectorAll('.filtering__checkbox-beds');
-
+	const groqQuery = `_type == 'accommodation' `;
+	const asideButtons = document.querySelectorAll('.filtering__collapsible-button');
 	const sectionFronpageAccommodations = document.querySelector('.frontpage_accommodations');
 	const filterButtons = document.querySelectorAll('.filter-buttons__container button');
-	const filterButtonAllAccomodation = document.querySelector('.filter-buttons__allAccommodations');
+	const filterButtonAllAccomodation = document.querySelector('.filter-buttons__allaccommodations');
 
-	//for (const checkbox of checkboxes) {
-	//	checkbox.addEventListener('click', handleCheckboxClick);
-	//}
-
-
-	for (const checkboxPropertyType of checkboxesPropertyType) {
-		checkboxPropertyType.addEventListener('click', handleCheckboxPropertyTypeClick);
+	for (const asideButton of asideButtons) {
+		asideButton.addEventListener('click', handleAsideButtonClick);
 	}
 
-	for (const checkboxCounty of checkboxesCounty) {
-		checkboxCounty.addEventListener('click', handleCheckboxCountyClick);
-	}
-	
-	for (const checkboxBeds of checkboxesBeds) {
-		checkboxBeds.addEventListener('click', handleCheckboxBedsClick);
+	function handleAsideButtonClick(event) {
+		const currentCheckboxSection = event.currentTarget.parentNode;
+		const currentCheckboxes = currentCheckboxSection.querySelectorAll('.filtering__checkbox');
+
+		for (const currentCheckbox of currentCheckboxes) {
+			currentCheckbox.addEventListener('click', handleCheckboxClick);
+		}
 	}
 
-
-	async function handleCheckboxPropertyTypeClick(event) {
-		getCheckboxDataFilterPropertyType(event);
+	async function handleCheckboxClick(event) {
+		getCheckboxDataFilter(event);
 		await fetchAccommodations();
 		renderHTML();
 		createMapboxContainerDOM(accommodations);
 		wishlist();
-
-		if (checkboxDataFilterPropertyType.length === 0) {
-			FrontpageAccommodations();
-		}
 	}
 
-	async function handleCheckboxCountyClick(event) {
-		getCheckboxDataFilterCounty(event);
-		await fetchAccommodations();
-		renderHTML();
-		createMapboxContainerDOM(accommodations);
-		slideshow();
-		wishlist();
+	function addAndRemoveDataFilterPropertyType(currentDataFilter, currentCheckbox) {
+		let index = checkboxDataFilterPropertyType.indexOf(currentDataFilter);
 
-		if (checkboxDataFilterCounty.length === 0) {
-			FrontpageAccommodations();
-		}
-	}
-
-	async function handleCheckboxBedsClick(event) {
-		getCheckboxDataFilterBeds(event);
-		await fetchAccommodations();
-		renderHTML();
-		createMapboxContainerDOM(accommodations);
-		slideshow();
-		wishlist();
-
-		if (checkboxDataFilterBeds.length === 0) {
-			FrontpageAccommodations();
-		}
-	}
-
-	function getCheckboxDataFilterPropertyType(event) {
-		let currentDataFilterPropertyType = event.currentTarget.dataset.filter;
-		let currentCheckboxPropertyType = event.currentTarget;
-		let index = checkboxDataFilterPropertyType.indexOf(currentDataFilterPropertyType);
-	
-		if (currentCheckboxPropertyType.checked) {
-			checkboxDataFilterPropertyType.push(currentDataFilterPropertyType);
+		if (currentCheckbox.checked) {
+			checkboxDataFilterPropertyType.push(currentDataFilter);
 		} else {
 			checkboxDataFilterPropertyType.splice(index, 1);
 		}
 	}
 
-	function getCheckboxDataFilterCounty(event) {
-		let currentDataFilterCounty = event.currentTarget.dataset.filter;
-		let currentCheckboxCounty = event.currentTarget;
-		let index = checkboxDataFilterCounty.indexOf(currentDataFilterCounty);
-	
-		if (currentCheckboxCounty.checked) {
-			checkboxDataFilterCounty.push(currentDataFilterCounty);
+	function addAndRemoveDataFilterCounty(currentDataFilter, currentCheckbox) {
+		let index = checkboxDataFilterCounty.indexOf(currentDataFilter);
+
+		if (currentCheckbox.checked) {
+			checkboxDataFilterCounty.push(currentDataFilter);
 		} else {
 			checkboxDataFilterCounty.splice(index, 1);
 		}
 	}
 
-	function getCheckboxDataFilterBeds(event) {
-		let currentDataFilterBeds = event.currentTarget.dataset.filter;
-		let currentCheckboxBeds = event.currentTarget;
-		let index = checkboxDataFilterBeds.indexOf(currentDataFilterBeds);
-	
-		if (currentCheckboxBeds.checked) {
-			checkboxDataFilterBeds.push(currentDataFilterBeds);
+	function addAndRemoveDataFilterBeds(currentDataFilter, currentCheckbox) {
+		let index = checkboxDataFilterBeds.indexOf(currentDataFilter);
+
+		if (currentCheckbox.checked) {
+			checkboxDataFilterBeds.push(currentDataFilter);
 		} else {
 			checkboxDataFilterBeds.splice(index, 1);
 		}
 	}
 
+	function getCheckboxDataFilter(event) {
+		let currentDataFilter = event.currentTarget.dataset.filter;
+		let currentCheckbox = event.currentTarget;
 
+		if (currentCheckbox.className === 'filtering__checkbox filtering__checkbox-propertytype') {
+			addAndRemoveDataFilterPropertyType(currentDataFilter, currentCheckbox);
+		}
 
-	//async function handleCheckboxClick(event) {
-	//	getCheckboxDataFilter(event);
-	//	await fetchAccommodations();
-	//	renderHTML();
-	//	createMapboxContainerDOM(accommodations);
+		else if (currentCheckbox.className === 'filtering__checkbox filtering__checkbox-countyname') {
+			addAndRemoveDataFilterCounty(currentDataFilter, currentCheckbox);
+		}
 
-	//	if (checkboxDataFilter.length === 0) {
-	//		FrontpageAccommodations();
-	//	}
-	//}
+		else if (currentCheckbox.className === 'filtering__checkbox filtering__checkbox-beds') {
+			addAndRemoveDataFilterBeds(currentDataFilter, currentCheckbox);	
+		}
 
-	//function getCheckboxDataFilter(event) {
-	//	let currentCheckboxDataFilter = event.currentTarget.dataset.filter;
-	//	let currentCheckbox = event.currentTarget;
-	//	let index = checkboxDataFilter.indexOf(currentCheckboxDataFilter);
-	
-	//	if (currentCheckbox.checked) {
-	//		checkboxDataFilter.push(currentCheckboxDataFilter);
-	//	} else {
-	//		checkboxDataFilter.splice(index, 1);
-	//	}
-	//}
+		if (checkboxDataFilterPropertyType.length === 0 && checkboxDataFilterCounty.length === 0 && checkboxDataFilterBeds.length === 0) {
+			FrontpageAccommodations();
+		}
+	}
+
+	function addPropertyTypeParameter() {
+		if (checkboxDataFilterPropertyType.length > 0) {
+			propertyParameter = `&& property_type in $propertyType `;
+		} else {
+			propertyParameter = '';
+		}
+	}
+
+	function addCountyParameter() {
+		if (checkboxDataFilterCounty.length > 0) {
+			countyParameter = `&& county->name in $countyName `;
+		} else {
+			countyParameter = '';
+		}
+	}
+
+	function addBedsParameter() {
+		if (checkboxDataFilterBeds.length > 0) {
+			bedsParameter = `&& beds in $bedQuantity`;
+		} else {
+			bedsParameter = '';
+		}
+	}
 
 	async function fetchAccommodations() {
-		const query = `*[_type == 'accommodation' && property_type in $propertyType || county->name in $countyName || beds in $bedQuantity] | order(price asc) {
+		addPropertyTypeParameter();
+		addCountyParameter();
+		addBedsParameter();
+
+		let query = `*[${groqQuery}${propertyParameter}${countyParameter}${bedsParameter}] | order(price asc) {
 			"image": gallery[0].asset->url,
 			"images": gallery[].asset->url,
 			"county": county->name,
@@ -158,17 +137,12 @@ export default function AsideFiltering() {
 			essentials
 		}`;
 
-		//const params = {
-		//	propertyType: checkboxDataFilter.legth > 0 ? checkboxDataFilter : null,
-		//	countyName: checkboxDataFilter.legth > 0 ? checkboxDataFilter : null,
-		//	bedQuantity: checkboxDataFilter.legth > 0 ? checkboxDataFilter : null
-		//};
 		const params = {
 			propertyType: checkboxDataFilterPropertyType,
 			countyName: checkboxDataFilterCounty,
 			bedQuantity: checkboxDataFilterBeds
 		};
-
+		
 		accommodations = await sanity.fetch(query, params);
 	}
 
@@ -181,7 +155,7 @@ export default function AsideFiltering() {
 	
 		sectionFronpageAccommodations.innerHTML = '';
 
-		accommodations.forEach(element =>{
+		accommodations.forEach(element => {
 			let accommodationTemplate = createAccommodationContainerDOM(element);
 			sectionFronpageAccommodations.appendChild(accommodationTemplate);
 

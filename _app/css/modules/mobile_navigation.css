@@ -29,6 +29,11 @@
 	line-height: 2.5;
 }
 
+.body__mobile-navigation-links a {
+	margin: auto;
+	color: var(--secondary-light);
+}
+
 @media screen and (max-width: 900px) {
 
 	.body__mobile-navigation {

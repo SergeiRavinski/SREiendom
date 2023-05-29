@@ -9,11 +9,11 @@ export default async function HeaderFiltering() {
 	let datasetCategory = '';
 	let accommodations = [];
 
-	const sectionFronpageAccommodations = document.querySelector('.frontpage_accommodations');
-	const filterButtons = document.querySelectorAll('.filter-buttons__container button');
-	const checkboxes = document.querySelectorAll('.filtering__checkbox');
-	const asideOptions = document.querySelectorAll('.filtering__collapsible-options > div');
-	const asideCollapsibleButtonArrow = document.querySelectorAll('.filtering__collapsible-button img');
+	const sectionFronpageAccommodations = document.querySelector('.main__frontpage_accommodations');
+	const filterButtons = document.querySelectorAll('.body__filter-buttons-container button');
+	const checkboxes = document.querySelectorAll('.aside__filtering-checkbox');
+	const asideOptions = document.querySelectorAll('.aside__filtering-collapsible-options > div');
+	const asideCollapsibleButtonArrow = document.querySelectorAll('.aside__filtering-collapsible-button img');
 	
 	for (const button of filterButtons) {
 		button.addEventListener('click', handleFilterButtonClick);
@@ -55,7 +55,6 @@ export default async function HeaderFiltering() {
 			title,
 			essentials
 		}`;
-
 		const params = {	
 			category: datasetCategory
 		};
@@ -78,10 +77,10 @@ export default async function HeaderFiltering() {
 
 		if (currentActiveButton) {
 			for (const button of filterButtons) {
-				button.classList.remove('filter-buttons--active');
+				button.classList.remove('body__filter-buttons--active');
 			}
 
-			currentActiveButton.classList.add('filter-buttons--active');
+			currentActiveButton.classList.add('body__filter-buttons--active');
 		}
 
 		sectionFronpageAccommodations.innerHTML = '';

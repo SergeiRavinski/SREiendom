@@ -1,7 +1,7 @@
 import { t_map } from '../env.js';
 
 export default function createMapboxPopupDOM(element) {
-	let containerMapboxPopup = document.querySelector('#main__popup-mapbox');
+	let containerMapboxPopup = document.querySelector('#body__popup-mapbox');
 	containerMapboxPopup.innerHTML = '';
 	let center = [`${element.longitude.longitude}`, `${element.latitude.latitude}`];
 	mapboxgl.accessToken = t_map;
@@ -12,8 +12,8 @@ export default function createMapboxPopupDOM(element) {
 		center: center,
 		zoom: 10,
 	});
-
 	const markerElement = document.createElement('div');
+	
 	markerElement.classList.add('marker');
 
 	new mapboxgl.Marker(markerElement)

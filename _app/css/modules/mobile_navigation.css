@@ -35,14 +35,12 @@
 }
 
 @media screen and (max-width: 900px) {
-
 	.body__mobile-navigation {
 		width: 40%;
 	}
 }	
 
 @media screen and (max-width: 600px) {
-
 	.body__mobile-navigation {
 		height: unset;
 		width: 50%;
@@ -54,7 +52,6 @@
 }	
 
 @media screen and (max-width: 480px) {
-
 	.body__mobile-navigation {
 		width: 100%;
 	}

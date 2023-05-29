@@ -30,7 +30,7 @@ main {
 
 @media screen and (min-width: 1920px) {
 	body, 
-	.main__popup {
+	.body__popup {
 		max-width: 1920px;
 		margin: 0 auto;
 	}	

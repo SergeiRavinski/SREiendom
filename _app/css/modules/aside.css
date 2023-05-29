@@ -1,4 +1,4 @@
-.filtering {
+.aside__filtering {
 	position: sticky;
 	top: 7rem;
 	width: 25%;
@@ -9,19 +9,19 @@
 	height: 100%;
 }
 
-.filtering .filtering__collapsible:first-of-type {
+.aside__filtering .aside__filtering-collapsible:first-of-type {
 	margin-top: 3rem;
 }
 
-.filtering button {
+.aside__filtering button {
 	border-radius: var(--border-radius);
 }
 
-.filtering__search-bar {
+.aside__filtering-search-bar {
 	position: relative;
 }
 
-.filtering__search-bar-input {
+.aside__filtering-search-bar-input {
 	width: 100%;
 	height: var(--gap-filter-buttons);
 	border: 0.1rem solid var(--tertiary-dark);
@@ -32,7 +32,7 @@
 	text-overflow: ellipsis;
 }
 
-.filtering__search-bar-submit {
+.aside__filtering-search-bar-submit {
 	position: absolute;
 	height: 100%;
 	width: 3rem;
@@ -44,7 +44,7 @@
 	cursor: pointer;
 }
 
-.filtering__collapsible-button {
+.aside__filtering-collapsible-button {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -56,26 +56,26 @@
 	white-space: nowrap;
 }
 
-.filtering__collapsible-button:hover {
+.aside__filtering-collapsible-button:hover {
 	background: var(--secondary-light);
 	color: var(--primary-dark);
 }
 
-.filtering__price-range {
+.aside__filtering-price-range {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 	gap: 0.5rem;
 	max-width: 100%;
 }
 
-.filtering__price-range input {
+.aside__filtering-price-range input {
 	height: var(--gap-filter-buttons);
 	border: 0.1rem solid var(--tertiary-dark);
 	border-radius: var(--border-radius);
 }
 
-.filtering__price-range-min-price,
-.filtering__price-range-max-price {
+.aside__filtering-price-range-min-price,
+.aside__filtering-price-range-max-price {
 	height: 2.5rem;
 	color: var(--tertiary-dark);
 	font-size: var(--small-text-size);
@@ -83,69 +83,69 @@
 	text-overflow: ellipsis;
 }
 
-.filtering__price-range-search {
+.aside__filtering-price-range-search {
 	background: var(--primary-dark);
 	color: var(--secondary-light);
 	cursor: pointer;
 	-webkit-appearance: none;
 }
 
-.filtering__price-range-search:hover {
+.aside__filtering-price-range-search:hover {
 	background: var(--secondary-dark);
 	transition: all 0.25s ease-in-out;
 }	
 
-.filtering__search-bar-input::placeholder,
-.filtering__price-range-min-price::placeholder,
-.filtering__price-range-max-price::placeholder {
+.aside__filtering-search-bar-input::placeholder,
+.aside__filtering-price-range-min-price::placeholder,
+.aside__filtering-price-range-max-price::placeholder {
 	opacity: 0.5;
 }
 
-.filtering__collapsible-options {
+.aside__filtering-collapsible-options {
 	border-bottom: 0.09rem solid var(--primary-dark);
 }
 
-.filtering__property-type-options,
-.filtering__county-options,
-.filtering__beds-options {
+.aside__filtering-property-type-options,
+.aside__filtering-county-options,
+.aside__filtering-beds-options {
 	display: none;
 }
 
-.filtering__property-type-options--visible,
-.filtering__county-options--visible,
-.filtering__beds-options--visible {
+.aside__filtering-property-type-options--visible,
+.aside__filtering-county-options--visible,
+.aside__filtering-beds-options--visible {
 	display: block;
 }
 
-.filtering__property-type-options div,
-.filtering__county-options div,
-.filtering__beds-options div {
+.aside__filtering-property-type-options div,
+.aside__filtering-county-options div,
+.aside__filtering-beds-options div {
 	display: flex;
 	margin: .5rem 1rem .5rem 1rem;
 }
 
-.filtering__property-type-options div label,
-.filtering__county-options div label,
-.filtering__beds-options div label {
+.aside__filtering-property-type-options div label,
+.aside__filtering-county-options div label,
+.aside__filtering-beds-options div label {
 	margin-left: 0.5rem;
 	-webkit-appearance: none;
 }
 
-.filtering__property-type-options div input,
-.filtering__county-options div input,
-.filtering__beds-options div input {
+.aside__filtering-property-type-options div input,
+.aside__filtering-county-options div input,
+.aside__filtering-beds-options div input {
 	width: 1.1rem;
 	height: 1.1rem;
 	accent-color: var(--primary-dark);
 	cursor: pointer;
 }
 
-.filtering__map {
+.aside__filtering-map {
 	width: 100%;
 }
 
-.filtering__map h3,
-.filtering__price-range-title {
+.aside__filtering-map h3,
+.aside__filtering-price-range-title {
 	display: flex;
 	align-items: center;
 	margin-top: 1rem;
@@ -154,7 +154,7 @@
 	color: var(--secondary-dark);
 }
 
-#filtering__mapbox {
+#aside__filtering-mapbox {
 	width: 100%;
 	min-height: 20rem;
 	border-radius: var(--border-radius);
@@ -170,46 +170,46 @@
  }
 
 @media screen and (max-width: 900px) {
-	.filtering {
+	.aside__filtering {
 		position: unset;
 		width: 100%;
 		font-size: var(--extra-small-text-size);
 	}
 
-	.filtering .filtering__collapsible:first-of-type {
+	.aside__filtering .aside__filtering-collapsible:first-of-type {
 		margin-top: var(--gap-navigation-mobile);
 	}
 	
-	.filtering__collapsible-button {
+	.aside__filtering-collapsible-button {
 		height: var(--gap-filter-buttons);
 		margin-top: var(--gap-padding);
 	}
 	
-	.filtering__price-range-min-price,
-	.filtering__price-range-max-price {
+	.aside__filtering-price-range-min-price,
+	.aside__filtering-price-range-max-price {
 		height: var(--gap-filter-buttons);
 		font-size: var(--extra-small-text-size);
 		padding-left: 0.3rem;
 	}
 	
-	.filtering__map h3,
-	.filtering__price-range-title {
+	.aside__filtering-map h3,
+	.aside__filtering-price-range-title {
 		margin-top: var(--gap-padding);
 		height: var(--gap-filter-buttons);
 	}	
 
-	.filtering__map {
+	.aside__filtering-map {
 		display: none;
 	}
 }
 
 @media screen and (max-width: 600px) {
 
-	.filtering {
+	.aside__filtering {
 		font-size: var(--mobile-medium-text-size);
 	}
 
-	.filtering__search-bar-submit {
+	.aside__filtering-search-bar-submit {
 		position: absolute;
 		height: 100%;
 		width: 3rem;
@@ -219,30 +219,30 @@
 		background: url(/_app/assets/icons/search.svg) center / 1.2rem no-repeat;
 	}
 
-	.filtering__search-bar-input {
+	.aside__filtering-search-bar-input {
 		height: 1.7rem;
 		font-size: var(--extra-small-text-size);
 	}
 
-	.filtering__collapsible-button {
+	.aside__filtering-collapsible-button {
 		margin-top: 0.3rem;
 		height: var(--gap-filter-buttons-collapsible);
 	}
 	
-	.filtering__price-range-min-price,
-	.filtering__price-range-max-price {
+	.aside__filtering-price-range-min-price,
+	.aside__filtering-price-range-max-price {
 		height: var(--gap-filter-buttons);
 		font-size: var(--extra-small-text-size);
 		padding-left: 0.3rem;
 	}
 
-	.filtering__map h3,
-	.filtering__price-range-title {
+	.aside__filtering-map h3,
+	.aside__filtering-price-range-title {
 		margin-top: 0.3rem;
 		height: 1.7rem;
 	}	
 
-	.filtering__price-range input {
+	.aside__filtering-price-range input {
 		height: 1.7rem;
 	}	
 }

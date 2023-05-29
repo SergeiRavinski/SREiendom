@@ -1,7 +1,7 @@
 import { t_map } from '../env.js';
 
 export default function createMapboxContainerDOM(accommodations) {
-	const containerMapbox = document.querySelector('#filtering__mapbox');
+	const containerMapbox = document.querySelector('#aside__filtering-mapbox');
 	containerMapbox.innerHTML = '';
 
 	mapboxgl.accessToken = t_map;
@@ -38,6 +38,7 @@ export default function createMapboxContainerDOM(accommodations) {
 				zoom: 10  
 			});
 		});
+		
 		bounds.extend(coordinates);
 	});
 	

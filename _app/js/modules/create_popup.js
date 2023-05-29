@@ -1,16 +1,16 @@
 import createMapboxPopupDOM from "./create_mapbox_popup.js"
 
 export default function createPopup(element) {
-	const popupAccommodation = document.querySelector('.main__popup');
-	const filterButtonsHeader = document.querySelector('.filter-buttons');
-	const buttonClosePopup = document.querySelector('.main__popup-title button');
+	const popupAccommodation = document.querySelector('.body__popup');
+	const filterButtonsHeader = document.querySelector('.body__filter-buttons');
+	const buttonClosePopup = document.querySelector('.body__popup-title button');
 	const main = document.querySelector('main');
-	const popupTitle = document.querySelector('.main__popup-title div h1');
-	const popupCity = document.querySelector('.main__popup-title div h3');
-	const popupImageContainer = document.querySelector('.main__popup-images');
-	const popupEssentialsContainer = document.querySelector('.main__popup-essentials ul');
-	const popupPrice = document.querySelector('.main__popup-form span h3');
-	const popupTotalPrice = document.querySelector('.main__popup-totalprice-sum');
+	const popupTitle = document.querySelector('.body__popup-title div h1');
+	const popupCity = document.querySelector('.body__popup-title div h3');
+	const popupImageContainer = document.querySelector('.body__popup-images');
+	const popupEssentialsContainer = document.querySelector('.body__popup-essentials ul');
+	const popupPrice = document.querySelector('.body__popup-form span h3');
+	const popupTotalPrice = document.querySelector('.body__popup-totalprice-sum');
 
 	buttonClosePopup.addEventListener('click', handleButtomCloseClick);
 
@@ -23,9 +23,9 @@ export default function createPopup(element) {
 			top: 0,
 			left: 0,
 		})
-		filterButtonsHeader.classList.add('filter-buttons--invisible');
+		filterButtonsHeader.classList.add('body__filter-buttons--invisible');
 		main.classList.add('main--invisible');
-		popupAccommodation.classList.add('main__popup--visible');
+		popupAccommodation.classList.add('body__popup--visible');
 	}
 
 	function getNewData(element) {
@@ -55,8 +55,8 @@ export default function createPopup(element) {
 	}
 
 	function handleButtomCloseClick() {
-		popupAccommodation.classList.remove('main__popup--visible');
-		filterButtonsHeader.classList.remove('filter-buttons--invisible');
+		popupAccommodation.classList.remove('body__popup--visible');
+		filterButtonsHeader.classList.remove('body__filter-buttons--invisible');
 		main.classList.remove('main--invisible');
 	}
 }

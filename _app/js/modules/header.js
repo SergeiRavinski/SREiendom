@@ -14,7 +14,6 @@ export default function Header() {
 	wishlist.addEventListener('click', handleClickOverWishlist);
 	mobileNavigation.addEventListener('click', handleClickOverMobileNavigation);
 	window.addEventListener('keydown', handleKeyDown);
-	//window.addEventListener('scroll', handleScrollDown);
 
 	function visibilityHamburgerMenu() {
 		isOpenedNavigationMobile = !isOpenedNavigationMobile;
@@ -46,10 +45,6 @@ export default function Header() {
 	function handleClickOverMobileNavigation(event) {
 		event.stopPropagation();
 	}
-
-	//function handleScrollDown() {
-	//	renderHTMLCloseMenus();
-	//}
 
 	function handleKeyDown(event) {
 		if(event.keyCode === 27) {

@@ -31,7 +31,6 @@ footer {
 }
 
 @media screen and (max-width: 900px) {
-
 	footer {
 		height: 2rem;
 		border-top: none;

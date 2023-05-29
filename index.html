@@ -16,11 +16,9 @@
 		<link rel="stylesheet" href="/_app/css/main.css">
 		<script type="module" src="/_app/js/main.js"></script>
 		<link rel="icon" href="/_app/assets/icons/house.svg">
-		
 	</head>
 	
 	<body>
-
 		<header class="header">
 			<a href="/" class="header__logo">
 				<img src="/_app/assets/icons/logo.svg" alt="Logo image">
@@ -37,25 +35,9 @@
 				<div></div>
 				<div></div>
 			</button>
-
 		</header>
 
-		<!--????-->
-		<section class="body__wishlist">
-			<!--<div class="body__wishlist-container">
-				<button>
-					<img src="/_app/assets/icons/close_white.svg" alt="">
-				</button>
-				<img src="/_app/assets/e645468b-84e5-4cdc-9b8a-26cda79d8e8d.jpeg.webp" alt="">
-				<h3>Enjoy the amazing fjord view of Norway</h3>
-				<h4>Sogndal, Norway</h4>
-				<span>
-					<h3>2500 kr NOK</h3> 
-					<h4>night</h4>
-				</span>
-				<button>RESERVE</button>
-			</div>-->
-		</section>
+		<section class="body__wishlist"></section>
 
 		<section class="body__mobile-navigation">
 			<div class="body__mobile-navigation-links">
@@ -63,327 +45,267 @@
 				<button class="body__mobile-navigation-links-wishlist">WISHLIST</button>
 			</div>
 		</section>
-		<!--????-->
 
-		<section class="filter-buttons">
-
-			<div class="filter-buttons__container">
-				<button class="filter-buttons__allaccommodations filter-buttons--active" data-category="all accommodations">
+		<section class="body__filter-buttons">
+			<div class="body__filter-buttons-container">
+				<button class="body__filter-buttons-allaccommodations body__filter-buttons--active" data-category="all accommodations">
 					<img src="/_app/assets/icons/all_accommodations.svg" alt="All accommodations icon">
 					<h6>ALL ACCOMMODATIONS</h6>
 				</button>	
 
-				<button class="filter-buttons__beachfront" data-category="beachfront">
+				<button class="body__filter-buttons-beachfront" data-category="beachfront">
 					<img src="/_app/assets/icons/beach_front.svg" alt="Beach front icon">
 					<h6>BEACHFRONT</h6>
 				</button>	
 
-				<button class="filter-buttons__amazing-views" data-category="amazing views">
+				<button class="body__filter-buttons-amazing-views" data-category="amazing views">
 					<img src="/_app/assets/icons/amazing_views.svg" alt="Amazing views icon">
 					<h6>AMAZING VIEWS</h6>
 				</button>	
 
-				<button class="filter-buttons__luxe" data-category="luxe">
+				<button class="body__filter-buttons-luxe" data-category="luxe">
 					<img src="/_app/assets/icons/luxe.svg" alt="Luxe icon">
 					<h6>LUXE</h6>
 				</button>	
 
-				<button class="filter-buttons__amazing-pools" data-category="amazing pools">
+				<button class="body__filter-buttons-amazing-pools" data-category="amazing pools">
 					<img src="/_app/assets/icons/amazing_pools.svg" alt="Amazing pools icon">
 					<h6>AMAZING POOLS</h6>
 				</button>	
 
-				<button class="filter-buttons__cabins" data-category="cabins">
+				<button class="body__filter-buttons-cabins" data-category="cabins">
 					<img src="/_app/assets/icons/cabins.svg" alt="Cabins icon">
 					<h6>CABINS</h6>
 				</button>
 
-				<button class="filter-buttons__treehouses" data-category="treehouses">
+				<button class="body__filter-buttons-treehouses" data-category="treehouses">
 					<img src="/_app/assets/icons/treehouses.svg" alt="Treehouses icon">
 					<h6>TREEHOUSES</h6>
 				</button>	
 
-				<button class="filter-buttons__private-room" data-category="private rooms">
+				<button class="body__filter-buttons-private-room" data-category="private rooms">
 					<img src="/_app/assets/icons/private_room.svg" alt="Private room icon">
 					<h6>PRIVATE ROOMS</h6>
 				</button>
 			</div>	
-
 		</section>
 
 		<main>
-
-			<aside class="filtering">
-
-				<form class="filtering__search-bar">
+			<aside class="aside__filtering">
+				<form class="aside__filtering-search-bar">
 					<input 
 						type="text" 
 						placeholder="search"
-						class="filtering__search-bar-input">
+						class="aside__filtering-search-bar-input">
 					<input 
 						type="submit"
-						class="filtering__search-bar-submit">	
+						class="aside__filtering-search-bar-submit">	
 				</form>
 
-				<!---------------------------------->
-
-				<section class="filtering__collapsible">
-
-					<button class="filtering__collapsible-button">
+				<section class="aside__filtering-collapsible">
+					<button class="aside__filtering-collapsible-button">
 						<h3>PROPERTY TYPE</h3>
 						<img src="/_app/assets/icons/arrow_down.svg" alt="Arrow down icon">
 					</button>
 
-					<fieldset class="filtering__collapsible-options">
-						<div class="filtering__property-type-options">
+					<fieldset class="aside__filtering-collapsible-options">
+						<div class="aside__filtering-property-type-options">
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-propertytype" data-filter="house" name="house">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-propertytype" data-filter="house" name="house">
 								<label for="house">House</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-propertytype" data-filter="flat" name="flat">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-propertytype" data-filter="flat" name="flat">
 								<label for="flat">Flat</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-propertytype" data-filter="guest house" name="guest house">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-propertytype" data-filter="guest house" name="guest house">
 								<label for="guest house">Guest house</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-propertytype" data-filter="hotel" name="hotel">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-propertytype" data-filter="hotel" name="hotel">
 								<label for="hotel">Hotel</label>
 							</div>
 						</div>
 					</fieldset>
-
 				</section>	
-				
-				<!---------------------------------->
 
-				<section class="filtering__collapsible">
-
-					<button class="filtering__collapsible-button">
+				<section class="aside__filtering-collapsible">
+					<button class="aside__filtering-collapsible-button">
 						<h3>COUNTY</h3>
 						<img src="/_app/assets/icons/arrow_down.svg" alt="Arrow down icon">
 					</button>
 					
-					<fieldset class="filtering__collapsible-options">
-						<div class="filtering__county-options">
+					<fieldset class="aside__filtering-collapsible-options">
+						<div class="aside__filtering-county-options">
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="oslo" name="oslo">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="oslo" name="oslo">
 								<label for="oslo">Oslo</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="rogaland" name="rogaland">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="rogaland" name="rogaland">
 								<label for="rogaland">Rogaland</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="møre og romsdal" name="møre og romsdal">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="møre og romsdal" name="møre og romsdal">
 								<label for="møre og romsdal">Møre og Romsdal</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="nordland" name="nordland">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="nordland" name="nordland">
 								<label for="nordland">Nordland</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="viken" name="viken">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="viken" name="viken">
 								<label for="viken">Viken</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="innlandet" name="innlandet">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="innlandet" name="innlandet">
 								<label for="innlandet">Innlandet</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="vestfold og telemark" name="vestfold og telemark">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="vestfold og telemark" name="vestfold og telemark">
 								<label for="vestfold og telemark">Vestfold og Telemark</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="agder" name="agder">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="agder" name="agder">
 								<label for="agder">Agder</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="vestland" name="vestland">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="vestland" name="vestland">
 								<label for="vestland" lang="no">Vestland</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="trøndelag" name="trøndelag">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="trøndelag" name="trøndelag">
 								<label for="trøndelag" lang="no">Trøndelag</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-countyname" data-filter="troms og finnmark" name="troms og finnmark">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-countyname" data-filter="troms og finnmark" name="troms og finnmark">
 								<label for="troms og finnmark" lang="no">Troms og Finnmark</label>
 							</div>
 						</div>
 					</fieldset>
-
 				</section>	
 
-				<!---------------------------------->
-
-				<section class="filtering__collapsible">
-
-					<button class="filtering__collapsible-button">
+				<section class="aside__filtering-collapsible">
+					<button class="aside__filtering-collapsible-button">
 						<h3>BEDS</h3>
 						<img src="/_app/assets/icons/arrow_down.svg" alt="Arrow down icon">
 					</button>
 
-					<fieldset class="filtering__collapsible-options">
-						<div class="filtering__beds-options">
+					<fieldset class="aside__filtering-collapsible-options">
+						<div class="aside__filtering-beds-options">
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="1" name="1">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="1" name="1">
 								<label for="1">1</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="2" name="2">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="2" name="2">
 								<label for="2">2</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="3" name="3">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="3" name="3">
 								<label for="3">3</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="4" name="4">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="4" name="4">
 								<label for="4">4</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="5" name="5">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="5" name="5">
 								<label for="5">5</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="6" name="6">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="6" name="6">
 								<label for="6">6</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="7" name="7">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="7" name="7">
 								<label for="7">7</label>
 							</div>
 
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="8" name="8">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="8" name="8">
 								<label for="8">8</label>
 							</div>
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="9" name="9">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="9" name="9">
 								<label for="9">9</label>
 							</div>
 							<div>
-								<input type="checkbox" class="filtering__checkbox filtering__checkbox-beds" data-filter="10" name="10">
+								<input type="checkbox" class="aside__filtering-checkbox aside__filtering-checkbox-beds" data-filter="10" name="10">
 								<label for="10">10</label>
 							</div>
 						</div>
 					</fieldset>
-
 				</section>	
 
-				<!---------------------------------->
-
-				<h3 class="filtering__price-range-title">PRICE RANGE</h3>
-				<form class="filtering__price-range">
+				<h3 class="aside__filtering-price-range-title">PRICE RANGE</h3>
+				
+				<form class="aside__filtering-price-range">
 					<input 
 						type="number" 
 						placeholder="min price"
-						class="filtering__price-range-min-price">
+						class="aside__filtering-price-range-min-price">
 					<input 
 						type="number" 
 						placeholder="max price"
-						class="filtering__price-range-max-price">
+						class="aside__filtering-price-range-max-price">
 					<input 
 						type="submit"
 						value="SEARCH"
-						class="filtering__price-range-search">	
+						class="aside__filtering-price-range-search">	
 				</form>
 
-				<!---------------------------------->
-
-				<section class="filtering__map">
+				<section class="aside__filtering-map">
 					<h3>MAP</h3>
-					<div id="filtering__mapbox">
-						<!--<img src="/_app/assets/Search.png" alt="Map">-->
-					</div>
+					<div id="aside__filtering-mapbox"></div>
 				</section>
-
 			</aside>
 				
-			<section class="search-result">
-				<div class="search-result__header">
+			<section class="main__search-result">
+				<div class="main__search-result-header">
 					<h2></h2>
 					<button></button>
 				</div>
-				<div class="search-result__container"></div>
+
+				<div class="main__search-result-container"></div>
 			</section>
 				
 			<section class="main__frontpage">
-				<div class="frontpage_accommodations__message">
+				<div class="main__frontpage_accommodations-message">
 					<h3>No exact matches</h3>
 					<h5>Try changing or removing some of your filters or adjusting your search area</h5>
 				</div>
 
-				<section class="frontpage_accommodations">
-					
-					<!--<a href="/" class="frontpage_accommodations__accommodation">
-						<div>
-							<img 
-								src="/_app/assets/image 8.jpg" 
-								alt="Image of a nice cabin"
-								class="frontpage_accommodations__accommodation-image">
-
-							<button class="frontpage_accommodations__accommodation-arrow-left">
-								<img 
-									src="/_app/assets/icons/arrow_left.svg" 
-									alt="Arrow left icon">
-							</button>
-
-							<button class="frontpage_accommodations__accommodation-arrow-right">
-								<img 
-									src="/_app/assets/icons/arrow_right.svg" 
-									alt="Arrow right icon">
-							</button>
-
-							<button class="frontpage_accommodations__accommodation-heart">
-								<img 
-									src="/_app/assets/icons/heart_white.svg" 
-									alt="Heart white icon">
-							</button>
-						</div>
-						
-						<h3 lang="no">Kristinsand, Norway</h3>
-						<h5>2 Beds</h5>
-						<span>
-							<h4>2300 kr NOK</h4>`
-							<h5>night</h5>
-						</span>
-					</a>	-->
-
-				</section>
+				<section class="main__frontpage_accommodations"></section>
 			</section>	
 
 			<button class="main__button-scroll-up">
 				<img src="./_app/assets/icons/arrow_up.svg" alt="Arrow up icon">
 			</button>
-	
 		</main>
 
-		<section class="main__popup">
-
-			<div class="main__popup-title">
+		<section class="body__popup">
+			<div class="body__popup-title">
 				<div>
 					<h1></h1>
 					<h3></h3>
@@ -394,53 +316,39 @@
 				</button>
 			</div>
 
-			<div class="main__popup-images">
-				<!--<img src="../_app/assets/0ff231c3-7825-4bdf-ae6d-dd16f3df5ca0.jpg.webp" alt="">-->
-				<!--<img src="../_app/assets/1a578672-c763-4dcb-80db-35f9192b9674.jpg.webp" alt="">
-				<img src="../_app/assets/784be254-45cb-4cf3-a2ee-47442b991117.jpg.webp" alt="">
-				<img src="../_app/assets/b17026e3-1e2a-4077-846c-7f2cc9cd7bb6.jpg.webp" alt="">
-				<img src="../_app/assets/cbe919cc-cfa3-46be-85e7-f64d3185044a.jpg.webp" alt="">-->
-			</div>
+			<div class="body__popup-images"></div>
 
-			<div class="main__popup-information">
-				<div class="main__popup-essentials">
+			<div class="body__popup-information">
+				<div class="body__popup-essentials">
 					<h3>What this place offers</h3>
-					<ul>
-						<!--<li>Mountain view</li>
-						<li>Hot water</li>
-						<li>Wifi</li>
-						<li>Kitchen</li>
-						<li>Private BBQ grill</li>
-						<li>Free parking on premises</li>
-						<li>Pets allowed</li>-->
-					</ul>
+					<ul></ul>
 				</div>
 
-				<form action="/index.html" class="main__popup-form" method="post">
+				<form action="/index.html" class="body__popup-form" method="post">
 					<span>
 						<h3></h4>
 						<h4>night</h5>
 					</span>
 
-					<section class="main__popup-input">
-						<section class="main__popup-input-date">
-							<div class="main__popup-input-date-checkin">
+					<section class="body__popup-input">
+						<section class="body__popup-input-date">
+							<div class="body__popup-input-date-checkin">
 								<h5>CHECK IN</h5>
 								<input type="date" placeholder="yyyy-mm-dd">
 							</div>
 							
-							<div class="main__popup-input-date-checkout">
+							<div class="body__popup-input-date-checkout">
 								<h5>CHECK IN</h5>
 								<input type="date" placeholder="yyyy-mm-dd">
 							</div>	
 						</section>
 						
-						<button class="main__popup-buttom-guests">
+						<button class="body__popup-buttom-guests">
 							<h5>GUESTS</h5>
 							<img src="/_app/assets/icons/arrow_down.svg" alt="Icon arrow down">
 						</button>
 
-						<fieldset class="main__popup-input-options">
+						<fieldset class="body__popup-input-options">
 							<div>
 								<input type="checkbox" class="" data-filter="1" name="1">
 								<label for="1">1 guest</label>
@@ -463,33 +371,25 @@
 						</fieldset>
 					</section>
 
-					<input type="submit" class="main__popup-button-reserve" value="RESERVE">
+					<input type="submit" class="body__popup-button-reserve" value="RESERVE">
 
-					<div class="main__popup-totalprice">
+					<div class="body__popup-totalprice">
 						<h4>
 							TOTAL
 						</h4>
-						<h4 class="main__popup-totalprice-sum"></h4>
+						<h4 class="body__popup-totalprice-sum"></h4>
 					</div>
 				</form>
 			</div>
 
-			<section class="main__popup-map">
+			<section class="body__popup-map">
 				<h3>Where You'll be</h3>
-				<div id="main__popup-mapbox">
-					<!--<img src="/_app/assets/Search.png" alt="Map">-->
-				</div>
+				<div id="body__popup-mapbox"></div>
 			</section>
-
-			<button class="main__button-scroll-up">
-				<img src="/_app/assets/icons/arrow_up.svg" alt="Arrow up icon">
-			</button>
-	
 		</section>
 
 		<footer>
 			<section class="footer__icons">
-
 				<a href="https://www.facebook.com" class="footer__icon--hovered">
 					<img src="/_app/assets/icons/facebook.svg" alt="Facebook icon">
 				</a>
@@ -505,9 +405,7 @@
 				<a href="https://www.instagram.com" class="footer__icon--hovered">
 					<img src="/_app/assets/icons/youtube.svg" alt="Youtube icon">
 				</a>
-
 			</section>
 		</footer>
-
 	</body>
 </html>

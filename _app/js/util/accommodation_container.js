@@ -9,14 +9,13 @@ export default function createAccommodationContainerDOM(accommodationData) {
 			const accommodationListItemImage = document.createElement('img');
 			const accommodationListItemDot = document.createElement('div');
 			accommodationListItemImage.setAttribute('alt', 'Image of a house');
-			accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
-			accommodationListItemDot.className = 'frontpage_accommodations__dot';
+			accommodationListItemImage.className = 'main__frontpage_accommodations-accommodation-image';
+			accommodationListItemDot.className = 'main__frontpage_accommodations-dot';
 			accommodationListItemImage.src = `${image}`;
 			accommodationListContainerGallery.appendChild(accommodationListItemImage);
 			accommodationListContainerDots.appendChild(accommodationListItemDot);
 		}
 
-		//const accommodationListItemImage = document.createElement('img');
 		const accommodationListItemButtonArrowLeft = document.createElement('button');
 		const accommodationListItemIconArrowLeft = document.createElement('img');
 		const accommodationListItemButtonArrowRight = document.createElement('button');
@@ -29,24 +28,20 @@ export default function createAccommodationContainerDOM(accommodationData) {
 		const accommodationListItemPrice = document.createElement('h4');
 		const accommodationListItemText = document.createElement('h5');
 	
-		//accommodationListItemImage.setAttribute('alt', 'Image of a house');
 		accommodationListItemIconArrowLeft.setAttribute('alt', 'Arrow left icon');
 		accommodationListItemIconArrowRight.setAttribute('alt', 'Arrow right icon');
 		accommodationListItemIconHeart.setAttribute('alt', 'Heart white icon');
 		accommodationListItemCounty.setAttribute('lang', 'no');
 
-		accommodationListItem.className = 'frontpage_accommodations__accommodation';
-		//accommodationListItemImage.className = 'frontpage_accommodations__accommodation-image';
-		accommodationListContainer.className = 'frontpage_accommodations__container';
-		accommodationListContainerGallery.className = 'frontpage_accommodations__container-gallery';
-		accommodationListContainerDots.className = 'frontpage_accommodations__dots';
-		accommodationListContainerDots.childNodes[0].classList.add('frontpage_accommodations__dot--active');
-		accommodationListItemButtonArrowLeft.className = 'frontpage_accommodations__accommodation-arrow-left';
-		accommodationListItemButtonArrowRight.className = 'frontpage_accommodations__accommodation-arrow-right';
-		accommodationListItemButtonHeart.className = 'frontpage_accommodations__accommodation-heart';
+		accommodationListItem.className = 'main__frontpage_accommodations-accommodation';
+		accommodationListContainer.className = 'main__frontpage_accommodations-container';
+		accommodationListContainerGallery.className = 'main__frontpage_accommodations-container-gallery';
+		accommodationListContainerDots.className = 'main__frontpage_accommodations-dots';
+		accommodationListContainerDots.childNodes[0].classList.add('main__frontpage_accommodations-dot--active');
+		accommodationListItemButtonArrowLeft.className = 'main__frontpage_accommodations-accommodation-arrow-left';
+		accommodationListItemButtonArrowRight.className = 'main__frontpage_accommodations-accommodation-arrow-right';
+		accommodationListItemButtonHeart.className = 'main__frontpage_accommodations-accommodation-heart';
 		
-		//accommodationListItem.href = './modal_window/index.html';
-		//accommodationListItemImage.src = `${accommodationData.image}`;
 		accommodationListItemIconArrowLeft.src = '/_app/assets/icons/arrow_left.svg';
 		accommodationListItemIconArrowRight.src = '/_app/assets/icons/arrow_right.svg';
 		accommodationListItemIconHeart.src = '/_app/assets/icons/heart_white.svg';
@@ -62,7 +57,6 @@ export default function createAccommodationContainerDOM(accommodationData) {
 			accommodationListItemSpan
 		);
 		accommodationListContainer.append(
-			//accommodationListItemImage,
 			accommodationListContainerGallery,
 			accommodationListContainerDots,
 			accommodationListItemButtonArrowLeft,

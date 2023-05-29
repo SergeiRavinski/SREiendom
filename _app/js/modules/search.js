@@ -10,13 +10,13 @@ export default async function Search() {
 	let accommodationSearchText = '';
 	let foundAccommodation = [];
 
-	const searchListInput = document.querySelector('.filtering__search-bar');
-	const searchInput = document.querySelector('.filtering__search-bar-input');	
-	const foundAccommodationListResult = document.querySelector('.search-result');
-	const foundAccommodationListResultTitle = document.querySelector('.search-result h2');
-	const sectionFronpageAccommodations = document.querySelector('.search-result__container');
-	const searchCloseButton = document.querySelector('.search-result__header button');
-	const frontpageAccommodations = document.querySelector('.frontpage_accommodations');
+	const searchListInput = document.querySelector('.aside__filtering-search-bar');
+	const searchInput = document.querySelector('.aside__filtering-search-bar-input');	
+	const foundAccommodationListResult = document.querySelector('.main__search-result');
+	const foundAccommodationListResultTitle = document.querySelector('.main__search-result h2');
+	const sectionFronpageAccommodations = document.querySelector('.main__search-result-container');
+	const searchCloseButton = document.querySelector('.main__search-result-header button');
+	const frontpageAccommodations = document.querySelector('.main__frontpage');
 	
 	searchListInput.addEventListener('submit', handleSearchInput);
 	searchCloseButton.addEventListener('click', handleCloseButton);
@@ -49,7 +49,6 @@ export default async function Search() {
 			title,
 			essentials
 		}`;
-
 		const params = {
 			countyName: accommodationSearchText,
 			cityName: accommodationSearchText,
@@ -60,14 +59,14 @@ export default async function Search() {
 	}
 	 
 	function inputRenderHTML() {
-		foundAccommodationListResult.classList.add('search-result--visible');
-		frontpageAccommodations.classList.add('frontpage_accommodations--invisible');
+		foundAccommodationListResult.classList.add('main__search-result--visible');
+		frontpageAccommodations.classList.add('main__frontpage--invisible');
 		searchInput.value = '';
 	}
 
 	function closeButtonRenderHTML() {
-		foundAccommodationListResult.classList.remove('search-result--visible');
-		frontpageAccommodations.classList.remove('frontpage_accommodations--invisible');
+		foundAccommodationListResult.classList.remove('main__search-result--visible');
+		frontpageAccommodations.classList.remove('main__frontpage--invisible');
 	}	
 
 	function renderHTML() {

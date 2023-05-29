@@ -1,5 +1,5 @@
 export default function AsideCollapsibleButtons() {
-	const filterButtons = document.querySelectorAll('.filtering__collapsible-button');
+	const filterButtons = document.querySelectorAll('.aside__filtering-collapsible-button');
 
 	for (const button of filterButtons) {
 		button.addEventListener('click', handleClickFilterButton);

@@ -3,7 +3,6 @@ import { sanity } from '../sanity.js';
 
 export default async function AboutUsCreateContainer() {
 	const mapboxContainer = document.querySelector('#main__mapbox-container');
-
 	const image = document.querySelector('.main__image img');
 	const history = document.querySelector('.main__history-container p');
 	const openingHoursMondayFriday = document.querySelector('.main__opening-hours-monday-friday');

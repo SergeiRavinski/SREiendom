@@ -2,7 +2,7 @@ export default function wishlist() {
 	let removeButtons = [];
 
 	const buttonWishlist = document.querySelector('.header__wishlist-button');
-	const addToWishlistButtons = document.querySelectorAll('.frontpage_accommodations__accommodation-heart');
+	const addToWishlistButtons = document.querySelectorAll('.main__frontpage_accommodations-accommodation-heart');
 	const wishlist = document.querySelector('.body__wishlist');
 	
 	addToWishlistButtons.forEach(button => {
@@ -12,13 +12,13 @@ export default function wishlist() {
 	function handleAddToWishlistButtonClick(event) {
 		event.stopPropagation();
 		const currentButton = event.currentTarget;
-
 		createWishlistContainer(currentButton);
 		renderHTML(currentButton);
 	}
 	
 	function handleButtonRemoveClick(button) {
 		removeButtons.push(button);
+
 		for (const removeButton of removeButtons) {
 			removeButton.addEventListener('click', handleButtonClick);
 		}
@@ -30,17 +30,14 @@ export default function wishlist() {
 	}
 
 	function createWishlistContainer(currentButton) {
-		//console.log(element)
 		const currentImage = currentButton.parentNode.childNodes[0].childNodes[0];
 		const currentLocation = currentButton.parentNode.parentNode.childNodes[1].innerHTML;
 		const currentPrice = currentButton.parentNode.parentNode.childNodes[3].childNodes[0].innerHTML;
 
-		//console.log(currentButton)
 		const wishlistItem = document.createElement('div');
 		const wishlistItemFirstButton = document.createElement('button');
 		const wishlistItemButtonIcon = document.createElement('img');
 		const wishlistItemImage = document.createElement('img');
-		//const wishlistItemFirstTitle = document.createElement('h3');
 		const wishlistItemSecondTitle = document.createElement('h4');
 		const wishlistItemSpan = document.createElement('span');
 		const wishlistItemSpanFirstTitle = document.createElement('h3');
@@ -63,7 +60,6 @@ export default function wishlist() {
 		wishlistItem.append(
 			wishlistItemFirstButton,
 			wishlistItemImage,
-			//wishlistItemFirstTitle,
 			wishlistItemSecondTitle,
 			wishlistItemSpan,
 			wishlistItemSecondButton
@@ -82,14 +78,14 @@ export default function wishlist() {
 
 	function renderHTML(currentButton) {
 		buttonWishlist.classList.add('body__mobile-navigation-links-wishlist--indicate');
-		currentButton.classList.add('frontpage_accommodations__accommodation-heart--animated');
+		currentButton.classList.add('main__frontpage_accommodations-accommodation-heart--animated');
 		
 		function removeIndicator() {
 			buttonWishlist.classList.remove('body__mobile-navigation-links-wishlist--indicate');
 		}	
 
 		function removeAnimatedButton() {
-			currentButton.classList.remove('frontpage_accommodations__accommodation-heart--animated');
+			currentButton.classList.remove('main__frontpage_accommodations-accommodation-heart--animated');
 		}
 
 		setTimeout(removeIndicator, 1000);

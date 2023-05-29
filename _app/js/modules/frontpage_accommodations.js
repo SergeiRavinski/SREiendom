@@ -19,7 +19,7 @@ export default async function FrontpageAccommodations() {
 		essentials
 	}`;
 	const accommodations = await sanity.fetch(query);
-	const sectionFronpageAccommodations = document.querySelector('.frontpage_accommodations');
+	const sectionFronpageAccommodations = document.querySelector('.main__frontpage_accommodations');
 
 	function renderHTML() {
 		accommodations.forEach(element => {

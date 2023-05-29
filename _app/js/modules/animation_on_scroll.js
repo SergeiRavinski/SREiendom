@@ -1,5 +1,5 @@
 export default function AnimationOnScroll() {
-	const filteringHeader = document.querySelector('.filter-buttons');
+	const filteringHeader = document.querySelector('.body__filter-buttons');
 	const offset = 50;
 	
 	window.addEventListener('scroll', animateElements);
@@ -10,9 +10,9 @@ export default function AnimationOnScroll() {
 
 	function renderHTML() {
 		if (window.pageYOffset >= offset) {
-			filteringHeader.classList.add('filter-buttons__container--animated');
+			filteringHeader.classList.add('body__filter-buttons-container--animated');
 		} else {
-			filteringHeader.classList.remove('filter-buttons__container--animated');
+			filteringHeader.classList.remove('body__filter-buttons-container--animated');
 		}	
 	}
 }

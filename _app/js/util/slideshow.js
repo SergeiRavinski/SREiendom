@@ -51,9 +51,9 @@ export default function slideshow(accommodationTemplate) {
 		}
 
 		for (const dot of dots) {
-			dot.classList.remove('frontpage_accommodations__dot--active');
+			dot.classList.remove('main__frontpage_accommodations-dot--active');
 		}
 
-		dots[currentIndex].classList.add('frontpage_accommodations__dot--active');
+		dots[currentIndex].classList.add('main__frontpage_accommodations-dot--active');
 	}	
 }

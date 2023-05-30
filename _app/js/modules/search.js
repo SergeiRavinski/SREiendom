@@ -36,6 +36,7 @@ export default async function Search() {
 		FrontpageAccommodations();
 	}
 
+	//Fetch accommodations
 	async function fetchAccommodations() {
 		const query = `*[_type == 'accommodation' && [county->name, city, beds] match [$countyName + '*', $cityName + '*', $bedsQuantity + '*']] | order(price asc) {
 			"image": gallery[0].asset->url,

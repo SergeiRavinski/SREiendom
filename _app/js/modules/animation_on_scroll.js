@@ -1,3 +1,4 @@
+//Add shadow to the filter section in the header if scroll down
 export default function AnimationOnScroll() {
 	const filteringHeader = document.querySelector('.body__filter-buttons');
 	const offset = 50;

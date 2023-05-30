@@ -1,3 +1,4 @@
+//Open and close collapsible buttons in the aside section
 export default function AsideCollapsibleButtons() {
 	const filterButtons = document.querySelectorAll('.aside__filtering-collapsible-button');
 

@@ -33,6 +33,7 @@ export default function Header() {
 		renderHTMLWishlist();
 	}
 
+	//Close all menus if click over body
 	function handleClickOverMain(event) {
 		event.stopPropagation();
 		renderHTMLCloseMenus();
@@ -46,6 +47,7 @@ export default function Header() {
 		event.stopPropagation();
 	}
 
+	//Close wishlist with the escape button
 	function handleKeyDown(event) {
 		if(event.keyCode === 27) {
 			(isOpenedWishlist = false);

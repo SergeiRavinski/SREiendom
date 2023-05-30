@@ -1,6 +1,7 @@
 export default function slideshow(accommodationTemplate) {
 	let currentIndex = 0;
 
+	//Get current buttons
 	const previousButtons = accommodationTemplate.childNodes[0].childNodes[2];
 	const nextButtons = accommodationTemplate.childNodes[0].childNodes[3];
 	

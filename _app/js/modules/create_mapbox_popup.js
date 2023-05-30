@@ -1,5 +1,6 @@
 import { t_map } from '../env.js';
 
+//Create mapbox elements in a Popup
 export default function createMapboxPopupDOM(element) {
 	let containerMapboxPopup = document.querySelector('#body__popup-mapbox');
 	containerMapboxPopup.innerHTML = '';

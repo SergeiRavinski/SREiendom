@@ -1,10 +1,10 @@
 # SREiendom
 
-This is an web application where users can search for accommodations in Norway.
+This is a web application where users can search for accommodations in Norway.
 
 ## About the project
 
-SREiendom is a web application that allows users to find accommodation throughout Norway. In order to simplify and speed up the search for accommodations has been added a field with filtering and a map with binding that shows the exact location. On the front page you can see the cards with information about accommodations, slideshows and like buttons to add a card to the wishlist. By clicking on an accommodation container, you can get detailed information with a gallery, the list of essentials and a map. The page about us contains information about the company, which is also was obtained from the database.
+SREiendom is a web application that allows users to find accommodation throughout Norway. In order to simplify and speed up the search for accommodations has been added a field with filtering and a map with binding that shows the exact location. On the front page you can see the cards with information about accommodations, slideshows and like buttons to add a card to the wishlist. By clicking on an accommodation container, you can get detailed information with a gallery, the list of essentials and a map. The page about us contains information about the company, which is also was obtained from the data base.
 
 ## Features
 

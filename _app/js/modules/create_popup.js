@@ -1,5 +1,6 @@
 import createMapboxPopupDOM from "./create_mapbox_popup.js"
 
+//Create Popup on the front page
 export default function createPopup(element) {
 	const popupAccommodation = document.querySelector('.body__popup');
 	const filterButtonsHeader = document.querySelector('.body__filter-buttons');
@@ -12,6 +13,7 @@ export default function createPopup(element) {
 	const popupPrice = document.querySelector('.body__popup-form span h3');
 	const popupTotalPrice = document.querySelector('.body__popup-totalprice-sum');
 
+	//EventListener to close the active Popup
 	buttonClosePopup.addEventListener('click', handleButtomCloseClick);
 
 	renderHTML();
@@ -54,6 +56,7 @@ export default function createPopup(element) {
 		popupTotalPrice.innerText = `${element.price} kr NOK`;
 	}
 
+	//Close Popup
 	function handleButtomCloseClick() {
 		popupAccommodation.classList.remove('body__popup--visible');
 		filterButtonsHeader.classList.remove('body__filter-buttons--invisible');

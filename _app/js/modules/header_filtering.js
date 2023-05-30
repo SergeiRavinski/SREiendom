@@ -5,6 +5,7 @@ import createPopup from './create_popup.js';
 import slideshow from '../util/slideshow.js';
 import wishlist from './wishlist.js';
 
+//Filtering by category in the header
 export default async function HeaderFiltering() {
 	let datasetCategory = '';
 	let accommodations = [];
@@ -15,6 +16,7 @@ export default async function HeaderFiltering() {
 	const asideOptions = document.querySelectorAll('.aside__filtering-collapsible-options > div');
 	const asideCollapsibleButtonArrow = document.querySelectorAll('.aside__filtering-collapsible-button img');
 	
+	//Loop through filter buttons in the header
 	for (const button of filterButtons) {
 		button.addEventListener('click', handleFilterButtonClick);
 	}
@@ -28,11 +30,13 @@ export default async function HeaderFiltering() {
 		wishlist();
 	}
 
+	//Display the active button
 	function addUnderlineToActiveButton(event) {
 		let currentActiveButton = event.currentTarget;
 		renderHTML(currentActiveButton);
 	}
 
+	//Get current category
 	function getCategory(event) {
 		datasetCategory = event.currentTarget.dataset.category;
 
@@ -41,6 +45,7 @@ export default async function HeaderFiltering() {
 		}
 	}
 
+	//Fetch accommodations
 	async function fetchAccommodations() {
 		const query = `*[_type == 'accommodation' && category match $category] | order(price asc) {
 			"image": gallery[0].asset->url,
@@ -63,6 +68,7 @@ export default async function HeaderFiltering() {
 	}
 
 	function renderHTML(currentActiveButton) {
+		//Remove all parameters from the aside filtering
 		for (const checkbox of checkboxes) {
 			checkbox.checked = false;
 		}
@@ -75,6 +81,7 @@ export default async function HeaderFiltering() {
 			collapsibleArrow.style.transform = 'rotateX(180deg)';
 		}
 
+		//Add the active button
 		if (currentActiveButton) {
 			for (const button of filterButtons) {
 				button.classList.remove('body__filter-buttons--active');

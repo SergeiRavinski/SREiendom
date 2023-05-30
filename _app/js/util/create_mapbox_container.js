@@ -44,5 +44,6 @@ export default function createMapboxContainerDOM(accommodations) {
 	
 	map.addControl(new mapboxgl.FullscreenControl());
 	map.addControl(new mapboxgl.NavigationControl());
+	//Keep focus on all active markers
 	map.fitBounds(bounds, { padding: 30 });
 }

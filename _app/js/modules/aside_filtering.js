@@ -28,10 +28,12 @@ export default async function AsideFiltering() {
 	const maxPriceInput = document.querySelector('.aside__filtering-price-range-max-price');
 	const messageTitle = document.querySelector('.main__frontpage_accommodations-message');
 
+	//Loop through collapsible buttons
 	for (const asideButton of asideButtons) {
 		asideButton.addEventListener('click', handleAsideButtonClick);
 	}
 
+	//Get current checkbox section and loop through current checkboxes
 	function handleAsideButtonClick(event) {
 		const currentCheckboxSection = event.currentTarget.parentNode;
 		const currentCheckboxes = currentCheckboxSection.querySelectorAll('.aside__filtering-checkbox');
@@ -41,6 +43,7 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//EventListener for the filtering by price
 	priceForm.addEventListener('submit', handlePriceFilteringButtonClick);
 
 	async function handleCheckboxClick(event) {
@@ -64,36 +67,7 @@ export default async function AsideFiltering() {
 		wishlist();
 	}
 
-	function addAndRemoveDataFilterPropertyType(currentDataFilter, currentCheckbox) {
-		let index = checkboxDataFilterPropertyType.indexOf(currentDataFilter);
-
-		if (currentCheckbox.checked) {
-			checkboxDataFilterPropertyType.push(currentDataFilter);
-		} else {
-			checkboxDataFilterPropertyType.splice(index, 1);
-		}
-	}
-
-	function addAndRemoveDataFilterCounty(currentDataFilter, currentCheckbox) {
-		let index = checkboxDataFilterCounty.indexOf(currentDataFilter);
-
-		if (currentCheckbox.checked) {
-			checkboxDataFilterCounty.push(currentDataFilter);
-		} else {
-			checkboxDataFilterCounty.splice(index, 1);
-		}
-	}
-
-	function addAndRemoveDataFilterBeds(currentDataFilter, currentCheckbox) {
-		let index = checkboxDataFilterBeds.indexOf(currentDataFilter);
-
-		if (currentCheckbox.checked) {
-			checkboxDataFilterBeds.push(currentDataFilter);
-		} else {
-			checkboxDataFilterBeds.splice(index, 1);
-		}
-	}
-
+	//Direct to the correct function depending on the checkbox class name
 	function getCheckboxDataFilter(event) {
 		const currentDataFilter = event.currentTarget.dataset.filter;
 		const currentCheckbox = event.currentTarget;
@@ -111,6 +85,40 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//Push and remove current value to the property type array
+	function addAndRemoveDataFilterPropertyType(currentDataFilter, currentCheckbox) {
+		let index = checkboxDataFilterPropertyType.indexOf(currentDataFilter);
+
+		if (currentCheckbox.checked) {
+			checkboxDataFilterPropertyType.push(currentDataFilter);
+		} else {
+			checkboxDataFilterPropertyType.splice(index, 1);
+		}
+	}
+
+	//Push and remove current value to the county array
+	function addAndRemoveDataFilterCounty(currentDataFilter, currentCheckbox) {
+		let index = checkboxDataFilterCounty.indexOf(currentDataFilter);
+
+		if (currentCheckbox.checked) {
+			checkboxDataFilterCounty.push(currentDataFilter);
+		} else {
+			checkboxDataFilterCounty.splice(index, 1);
+		}
+	}
+
+	//Push and remove current value to the beds array
+	function addAndRemoveDataFilterBeds(currentDataFilter, currentCheckbox) {
+		let index = checkboxDataFilterBeds.indexOf(currentDataFilter);
+
+		if (currentCheckbox.checked) {
+			checkboxDataFilterBeds.push(currentDataFilter);
+		} else {
+			checkboxDataFilterBeds.splice(index, 1);
+		}
+	}
+
+	//Add and remove parameters for property type in query to avoid the problem when an array is empty
 	function addPropertyTypeParameter() {
 		if (checkboxDataFilterPropertyType.length > 0) {
 			propertyParameter = `&& property_type in $propertyType `;
@@ -119,6 +127,7 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//Add and remove parameters for county in query to avoid the problem when an array is empty
 	function addCountyParameter() {
 		if (checkboxDataFilterCounty.length > 0) {
 			countyParameter = `&& county->name in $countyName `;
@@ -127,6 +136,7 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//Add and remove parameters for beds in query to avoid the problem when an array is empty
 	function addBedsParameter() {
 		if (checkboxDataFilterBeds.length > 0) {
 			bedsParameter = `&& beds in $bedQuantity`;
@@ -135,6 +145,7 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//Add and remove parameters for minimum price in query to avoid the problem when an array is empty
 	function addMinPriceFiltering() {
 		minPrice = minPriceInput.value;
 
@@ -145,6 +156,7 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//Add and remove parameters for maximum price in query to avoid the problem when an array is empty
 	function addMaxPriceFiltering() {
 		maxPrice = maxPriceInput.value;
 
@@ -155,6 +167,7 @@ export default async function AsideFiltering() {
 		}
 	}
 
+	//Fetch accommodations
 	async function fetchAccommodations() {
 		let query = `*[${groqQuery}${propertyParameter}${countyParameter}${bedsParameter}${minPriceParameter}${maxPriceParameter}] | order(price asc) {
 			"image": gallery[0].asset->url,
@@ -183,12 +196,14 @@ export default async function AsideFiltering() {
 	}
 
 	function renderHTML() {
+		//Display the message with recommendations if nothing found
 		if (accommodations.length === 0) {
 			messageTitle.classList.add('main__frontpage_accommodations-message--visible');
 		} else {
 			messageTitle.classList.remove('main__frontpage_accommodations-message--visible');
 		}
 
+		//Remove active button if it not all accommodations in the header filtering
 		for (const button of filterButtons) {
 			button.classList.remove('body__filter-buttons--active');
 		}

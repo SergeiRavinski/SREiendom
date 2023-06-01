@@ -1,7 +1,7 @@
 import { t_map } from '../env.js';
 import { sanity } from '../sanity.js';
 
-//Create elements on the About us Page
+//Create elements on the About us page
 export default async function AboutUsCreateContainer() {
 	const mapboxContainer = document.querySelector('#main__mapbox-container');
 	const image = document.querySelector('.main__image img');

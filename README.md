@@ -62,6 +62,7 @@ The database consists of three documents: accommodation, county and information 
 
 ## Links
 
+- Sanity studio: https://sreiendom.sanity.studio/website
 - Project: https://github.com/users/SergeiRavinski/projects/5
 - Projects repository: https://github.com/SergeiRavinski/SREiendom
 - Live demo: https://sreiendom.netlify.app

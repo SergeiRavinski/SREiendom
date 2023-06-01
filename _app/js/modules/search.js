@@ -1,6 +1,5 @@
 import { sanity } from '../sanity.js';
 import createMapboxContainerDOM from '../util/create_mapbox_container.js';
-import FrontpageAccommodations from './frontpage_accommodations.js';
 import createAccommodationContainerDOM from "../util/accommodation_container.js";
 import createPopup from './create_popup.js';
 import slideshow from '../util/slideshow.js';
@@ -33,7 +32,6 @@ export default async function Search() {
 
 	function handleCloseButton() {
 		closeButtonRenderHTML();
-		FrontpageAccommodations();
 	}
 
 	//Fetch accommodations

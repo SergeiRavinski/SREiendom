@@ -32,7 +32,6 @@ SREiendom is a web application that allows users to find accommodation throughou
 - CSS Grid
 - JavaScript
 - Sanity Studio
-- Sanity Query API 
 - Query language GROQ
 - Mapbox
 - Figma
@@ -56,8 +55,13 @@ The database consists of three documents: accommodation, county and information 
 
 ![Data base model](/_app/assets/images/data_base_model.jpeg)
 
+## Access
+
+`http://localhost:5500`
+`http://localhost:3333`
+
 ## Links
 
 - Project: https://github.com/users/SergeiRavinski/projects/5
 - Projects repository: https://github.com/SergeiRavinski/SREiendom
-- Demo: https://sreiendom.netlify.app
+- Live demo: https://sreiendom.netlify.app

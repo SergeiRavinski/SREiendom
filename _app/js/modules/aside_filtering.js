@@ -210,10 +210,6 @@ export default async function AsideFiltering() {
 
 		filterButtonAllAccomodation.classList.add('body__filter-buttons--active');
 		sectionFronpageAccommodations.innerHTML = '';
-		minPriceInput.value = '';
-		maxPriceInput.value = '';
-		minPriceParameter = '';
-		maxPriceParameter = '';
 
 		accommodations.forEach(element => {
 			let accommodationTemplate = createAccommodationContainerDOM(element);

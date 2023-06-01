@@ -55,10 +55,10 @@ The database consists of three documents: accommodation, county and information 
 
 ![Data base model](/_app/assets/images/data_base_model.jpeg)
 
-### Access
+## Access
 
-http://localhost:5500
-http://localhost:3333
+`http://localhost:5500`
+`http://localhost:3333`
 
 ## Links
 

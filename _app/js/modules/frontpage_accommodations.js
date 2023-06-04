@@ -9,6 +9,7 @@ export default async function FrontpageAccommodations() {
 	const query = `*[_type == 'accommodation'] | order(price asc) {
 		"image": gallery[0].asset->url,
 		"images": gallery[].asset->url,
+		"imagesSlideshow": gallery_slideshow[].asset->url,
 		"county": county->name,
 		city,
 		beds,

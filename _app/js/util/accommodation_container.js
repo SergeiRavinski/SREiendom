@@ -1,11 +1,11 @@
 export default function createAccommodationContainerDOM(accommodationData) {	
-		const images = accommodationData.images;
+		const imagesFrontpage = accommodationData.imagesSlideshow;
 		const accommodationListItem = document.createElement('button');
 		const accommodationListContainer = document.createElement('div');
 		const accommodationListContainerGallery = document.createElement('div');
 		const accommodationListContainerDots = document.createElement('div');
 
-		for (const image of images) {
+		for (const image of imagesFrontpage) {
 			const accommodationListItemImage = document.createElement('img');
 			const accommodationListItemDot = document.createElement('div');
 			accommodationListItemImage.setAttribute('alt', 'Image of a house');

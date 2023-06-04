@@ -39,6 +39,7 @@ export default async function Search() {
 		const query = `*[_type == 'accommodation' && [county->name, city, beds] match [$countyName + '*', $cityName + '*', $bedsQuantity + '*']] | order(price asc) {
 			"image": gallery[0].asset->url,
 			"images": gallery[].asset->url,
+			"imagesSlideshow": gallery_slideshow[].asset->url,
 			"county": county->name,
 			city,
 			beds,

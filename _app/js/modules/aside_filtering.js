@@ -172,6 +172,7 @@ export default async function AsideFiltering() {
 		let query = `*[${groqQuery}${propertyParameter}${countyParameter}${bedsParameter}${minPriceParameter}${maxPriceParameter}] | order(price asc) {
 			"image": gallery[0].asset->url,
 			"images": gallery[].asset->url,
+			"imagesSlideshow": gallery_slideshow[].asset->url,
 			"county": county->name,
 			city,
 			beds,

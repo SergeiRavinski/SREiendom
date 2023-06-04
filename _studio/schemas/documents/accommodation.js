@@ -148,6 +148,17 @@ export default {
 					type: 'image',
 				}
 			]
+		},
+		{
+			title: 'Gallery slideshow',
+			description: 'Upload a photo',
+			name: 'gallery_slideshow',
+			type: 'array',
+			of: [
+				{
+					type: 'image',
+				}
+			]
 		}
 	]
 }

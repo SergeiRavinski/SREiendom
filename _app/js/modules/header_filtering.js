@@ -50,6 +50,7 @@ export default async function HeaderFiltering() {
 		const query = `*[_type == 'accommodation' && category match $category] | order(price asc) {
 			"image": gallery[0].asset->url,
 			"images": gallery[].asset->url,
+			"imagesSlideshow": gallery_slideshow[].asset->url,
 			"county": county->name,
 			city,
 			beds,

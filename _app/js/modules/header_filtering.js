@@ -15,6 +15,7 @@ export default async function HeaderFiltering() {
 	const checkboxes = document.querySelectorAll('.aside__filtering-checkbox');
 	const asideOptions = document.querySelectorAll('.aside__filtering-collapsible-options > div');
 	const asideCollapsibleButtonArrow = document.querySelectorAll('.aside__filtering-collapsible-button img');
+	const priceInput = document.querySelectorAll('.aside__filtering-price');
 	
 	//Loop through filter buttons in the header
 	for (const button of filterButtons) {
@@ -80,6 +81,10 @@ export default async function HeaderFiltering() {
 
 		for (const collapsibleArrow of asideCollapsibleButtonArrow) {
 			collapsibleArrow.style.transform = 'rotateX(180deg)';
+		}
+
+		for (const price of priceInput) {
+			price.value = '';
 		}
 
 		//Add the active button

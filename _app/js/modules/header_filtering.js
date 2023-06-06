@@ -16,6 +16,7 @@ export default async function HeaderFiltering() {
 	const asideOptions = document.querySelectorAll('.aside__filtering-collapsible-options > div');
 	const asideCollapsibleButtonArrow = document.querySelectorAll('.aside__filtering-collapsible-button img');
 	const priceInput = document.querySelectorAll('.aside__filtering-price');
+	const messageTitle = document.querySelector('.main__frontpage_accommodations-message');
 	
 	//Loop through filter buttons in the header
 	for (const button of filterButtons) {
@@ -83,8 +84,10 @@ export default async function HeaderFiltering() {
 			collapsibleArrow.style.transform = 'rotateX(180deg)';
 		}
 
-		for (const price of priceInput) {
-			price.value = '';
+		if (priceInput) {
+			for (const price of priceInput) {
+				price.value = '';
+			}
 		}
 
 		//Add the active button
@@ -96,6 +99,10 @@ export default async function HeaderFiltering() {
 			currentActiveButton.classList.add('body__filter-buttons--active');
 		}
 
+		if (messageTitle) {
+			messageTitle.classList.remove('main__frontpage_accommodations-message--visible');
+		}
+		
 		sectionFronpageAccommodations.innerHTML = '';
 		accommodations.forEach(element => {
 			let accommodationTemplate = createAccommodationContainerDOM(element);

@@ -19,7 +19,11 @@
 
 	--primary-dark-transparent: rgba(0, 5, 8, 0.4);
 	--secondary-dark-transparent: rgba(0, 5, 8, 0.6);
+	--tertiary-dark-transparent: rgba(16, 50, 70, 0.3);
 	--primary-light-transparent: rgba(255, 255, 255, 0.8);
+
+	--primary-dark-loader: #ff4d505e;
+	--secondary-dark-loader: #ff0004;
 
 	--gap-navigation: 3rem;
 	--gap-filter-buttons: 2rem;

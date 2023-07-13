@@ -1,0 +1,53 @@
+.body__message-popup,
+.body__loader-popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: var(--primary-light);
+	z-index: 500;
+	color: var(--secondary-light);
+	font-size: var(--large-text-size);
+	display: none;
+	place-items: center;
+	place-content: center;
+}
+
+.body__message-popup--visible {
+	display: flex;
+}
+
+.body__loader-popup--visible {
+	display: flex;
+}
+
+.body__loader-element svg polyline {
+	fill: none;
+	stroke-width: 3.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+ }
+ 
+ .body__loader-element svg polyline#back {
+	fill: none;
+	stroke: var(--primary-dark-loader);
+ }
+ 
+ .body__loader-element svg polyline#front {
+	fill: none;
+	stroke: var(--secondary-dark-loader);
+	stroke-dasharray: 48, 144;
+	stroke-dashoffset: 192;
+	animation: dash 1.5s linear infinite;
+ }
+ 
+ @keyframes dash {
+	72.5% {
+	  opacity: 0;
+	}
+ 
+	to {
+	  stroke-dashoffset: 0;
+	}
+ }

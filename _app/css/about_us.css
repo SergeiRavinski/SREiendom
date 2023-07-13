@@ -107,8 +107,8 @@ main {
 	height: 100vh;
 	background: var(--primary-dark);
 	z-index: 500;
-	color: var(--secondary-light);
-	font-size: var(--large-text-size);
+	color: var(--secondary-dark);
+	font-size: var(--small-text-size);
 	display: none;
 	place-items: center;
 	place-content: center;

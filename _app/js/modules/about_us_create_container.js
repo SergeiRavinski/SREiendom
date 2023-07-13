@@ -10,6 +10,9 @@ export default async function AboutUsCreateContainer() {
 	const openingHoursSaturdaySunday = document.querySelector('.main__opening-hours-saturday-sunday');
 	const emailAddress = document.querySelector('.main__email-address');
 	const phoneNumber = document.querySelector('.main__phone-number');
+	const loadingPopup = document.querySelector('.body__loader-popup');
+	const messagePopup = document.querySelector('.body__message-popup');
+	const message = document.querySelector('.body__message-popup h3');
 	const query = `*[_type == 'about_us'] {
 		"image": image{asset->{url}},
 		"history": history[0]{children[0]{text}},
@@ -20,7 +23,30 @@ export default async function AboutUsCreateContainer() {
 		"longitude": location{longitude},
   		"latitude": location{latitude}
 	}`;
-	const information = await sanity.fetch(query);
+	
+	let information;
+	
+	try {
+		showLoadingAnimation();
+		information = await sanity.fetch(query);
+		hideLoadingAnimation();
+	} catch {
+		hideLoadingAnimation();
+		handleError();
+	}
+	
+	function showLoadingAnimation() {
+		loadingPopup.classList.add('body__loader-popup--visible');
+	}
+	
+	function hideLoadingAnimation() {
+		loadingPopup.classList.remove('body__loader-popup--visible');
+	}
+	
+	function handleError() {
+		messagePopup.classList.add('body__message-popup--visible');
+		message.textContent = new Error('Something went wrong');
+	}
 
 	information.forEach(element => {
 		image.src = `${element.image.asset.url}`;

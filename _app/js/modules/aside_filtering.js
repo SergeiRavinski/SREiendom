@@ -169,6 +169,17 @@ export default async function AsideFiltering() {
 
 	//Fetch accommodations
 	async function fetchAccommodations() {
+		const loadingPopup = document.querySelector('.body__loader-popup');
+		const messagePopup = document.querySelector('.body__message-popup');
+		const message = document.querySelector('.body__message-popup h3');
+		const params = {
+			propertyType: checkboxDataFilterPropertyType,
+			countyName: checkboxDataFilterCounty,
+			bedQuantity: checkboxDataFilterBeds,
+			lowestPrice: Number(minPrice),
+			highestPrice: Number(maxPrice)
+		};
+
 		let query = `*[${groqQuery}${propertyParameter}${countyParameter}${bedsParameter}${minPriceParameter}${maxPriceParameter}] | order(price asc) {
 			"image": gallery[0].asset->url,
 			"images": gallery[].asset->url,
@@ -184,16 +195,29 @@ export default async function AsideFiltering() {
 			title,
 			essentials
 		}`;
-
-		const params = {
-			propertyType: checkboxDataFilterPropertyType,
-			countyName: checkboxDataFilterCounty,
-			bedQuantity: checkboxDataFilterBeds,
-			lowestPrice: Number(minPrice),
-			highestPrice: Number(maxPrice)
-		};
-
-		accommodations = await sanity.fetch(query, params);
+		
+		//Handle request
+		try {
+			showLoadingAnimation();
+			accommodations = await sanity.fetch(query, params);
+			hideLoadingAnimation();
+		} catch {
+			hideLoadingAnimation();
+			handleError();
+		}
+		
+		function showLoadingAnimation() {
+			loadingPopup.classList.add('body__loader-popup--visible');
+		}
+		
+		function hideLoadingAnimation() {
+			loadingPopup.classList.remove('body__loader-popup--visible');
+		}
+		
+		function handleError() {
+			messagePopup.classList.add('body__message-popup--visible');
+			message.textContent = new Error('Something went wrong');
+		}
 	}
 
 	function renderHTML() {

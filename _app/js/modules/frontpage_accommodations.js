@@ -19,8 +19,35 @@ export default async function FrontpageAccommodations() {
 		title,
 		essentials
 	}`;
-	const accommodations = await sanity.fetch(query);
 	const sectionFronpageAccommodations = document.querySelector('.main__frontpage_accommodations');
+	const loadingPopup = document.querySelector('.body__loader-popup');
+	const messagePopup = document.querySelector('.body__message-popup');
+	const message = document.querySelector('.body__message-popup h3');
+
+	let accommodations;
+
+	//Handle request
+	try {
+		showLoadingAnimation();
+		accommodations = await sanity.fetch(query);
+		hideLoadingAnimation();
+	} catch {
+		hideLoadingAnimation();
+		handleError();
+	}
+	
+	function showLoadingAnimation() {
+		loadingPopup.classList.add('body__loader-popup--visible');
+	}
+	
+	function hideLoadingAnimation() {
+		loadingPopup.classList.remove('body__loader-popup--visible');
+	}
+	
+	function handleError() {
+		messagePopup.classList.add('body__message-popup--visible');
+		message.textContent = new Error('Something went wrong');
+	}
 
 	function renderHTML() {
 		accommodations.forEach(element => {

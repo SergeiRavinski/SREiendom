@@ -63,6 +63,7 @@
 	border-radius: var(--border-radius);
 	cursor: pointer;
 	box-shadow: 0 0.03rem 0.5rem var(--tertiary-light), 0 0.05rem 1rem var(--tertiary-light);
+	animation: fade 0.3s ease-in-out;
 }
 
 .main__frontpage_accommodations-accommodation:hover {

@@ -105,7 +105,7 @@ main {
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background: var(--primary-dark);
+	background: var(--primary-light);
 	z-index: 500;
 	color: var(--secondary-dark);
 	font-size: var(--small-text-size);

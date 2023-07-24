@@ -20,11 +20,11 @@ export default function wishlist() {
 		removeButtons.push(button);
 
 		for (const removeButton of removeButtons) {
-			removeButton.addEventListener('click', handleButtonClick);
+			removeButton.addEventListener('click', handleRemoveCard);
 		}
 	}
 
-	function handleButtonClick(event) {
+	function handleRemoveCard(event) {
 		const card = event.currentTarget.parentNode;
 		card.style.display = 'none';
 	}

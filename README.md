@@ -2,44 +2,47 @@
 
 This is a web application where users can search for accommodations in Norway.
 
+![Screenshot of the GitHub project](/_app/assets/images/sreiendom_screenshot.png)
+
 ## About the project
 
 SREiendom is a web application that allows users to find accommodation throughout Norway. In order to simplify and speed up the search for accommodations has been added a field with filtering and a map with binding that shows the exact location. On the front page you can see the cards with information about accommodations, slideshows and like buttons to add a card to the wishlist. By clicking on an accommodation container, you can get detailed information with a gallery, the list of essentials and a map. The page about us contains information about the company, which is also was obtained from the data base.
 
 ## Features
 
-- Data base with all accommodations and information about company
-- Filter by category, property type, county, number of beds, price range
-- Ability to search for
-- Mapbox with binding
-- Carousel
-- Wishlist
-- Animation on scroll
-- Responsive layout depending on the device screen size
-- Keyboard navigation
-- Hamburger menu
-- Popup on accommodation container click with gallery, accommodation details and the exact location of an accommodation
-- Popup on marker click on the map
-- Zoom to marker on click on the map
-- Ability to scroll up on button click
-- Dynamic about us page using mapbox
+-   Data base with all accommodations and information about company
+-   Filter by category, property type, county, number of beds, price range
+-   Ability to search for
+-   Mapbox with binding
+-   Carousel
+-   Wishlist
+-   Animation on scroll
+-   Responsive layout depending on the device screen size
+-   Keyboard navigation
+-   Hamburger menu
+-   Popup on accommodation container click with gallery, accommodation details and the exact location of an accommodation
+-   Popup on marker click on the map
+-   Zoom to marker on click on the map
+-   Ability to scroll up on button click
+-   Dynamic about us page using mapbox
 
 ### The project is build with
 
-- HTML5
-- CSS3
-- CSS Flexbox
-- CSS Grid
-- JavaScript
-- Sanity Studio
-- Query language GROQ
-- Mapbox
-- Figma
+-   HTML5
+-   CSS3
+-   CSS Flexbox
+-   CSS Grid
+-   JavaScript
+-   Sanity Studio
+-   Query language GROQ
+-   Mapbox
+-   Figma
 
 ## Process
+
 ### Minimum Viable Product (MVP)
 
-The MVP for this project was a web application which contains header, footer, displays accommodations with information, and has ability to filter accommodations by property type, county name and the number of beds. 
+The MVP for this project was a web application which contains header, footer, displays accommodations with information, and has ability to filter accommodations by property type, county name and the number of beds.
 
 ![MVP](/_app/assets/images/mvp.jpeg)
 
@@ -62,7 +65,7 @@ The database consists of three documents: accommodation, county and information 
 
 ## Links
 
-- Sanity studio: https://sreiendom.sanity.studio/website
-- Project: https://github.com/users/SergeiRavinski/projects/5
-- Projects repository: https://github.com/SergeiRavinski/SREiendom
-- Live demo: https://sreiendom.netlify.app
+-   Sanity studio: https://sreiendom.sanity.studio/website
+-   Project: https://github.com/users/SergeiRavinski/projects/5
+-   Projects repository: https://github.com/SergeiRavinski/SREiendom
+-   Live demo: https://sreiendom.netlify.app

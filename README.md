@@ -2,7 +2,7 @@
 
 This is a web application where users can search for accommodations in Norway.
 
-![Screenshot of the GitHub project](/_app/assets/images/sreiendom_screenshot.png)
+![Screenshot of the website](/_app/assets/images/sreiendom_screenshot.png)
 
 ## About the project
 
